@@ -1,0 +1,16 @@
+C:\Users\Usuario\Documents\cervantes\CERVANTES_3\programacionIII\ProyectoSegRiv\SeguroRivadavia\GestionSiniestros\bin\Debug\GestionSiniestros.exe.config
+C:\Users\Usuario\Documents\cervantes\CERVANTES_3\programacionIII\ProyectoSegRiv\SeguroRivadavia\GestionSiniestros\bin\Debug\GestionSiniestros.exe
+C:\Users\Usuario\Documents\cervantes\CERVANTES_3\programacionIII\ProyectoSegRiv\SeguroRivadavia\GestionSiniestros\bin\Debug\GestionSiniestros.pdb
+C:\Users\Usuario\Documents\cervantes\CERVANTES_3\programacionIII\ProyectoSegRiv\SeguroRivadavia\GestionSiniestros\obj\Debug\GestionSiniestros.csprojResolveAssemblyReference.cache
+C:\Users\Usuario\Documents\cervantes\CERVANTES_3\programacionIII\ProyectoSegRiv\SeguroRivadavia\GestionSiniestros\obj\Debug\GestionSiniestros.Properties.Resources.resources
+C:\Users\Usuario\Documents\cervantes\CERVANTES_3\programacionIII\ProyectoSegRiv\SeguroRivadavia\GestionSiniestros\obj\Debug\GestionSiniestros.csproj.GenerateResource.Cache
+C:\Users\Usuario\Documents\cervantes\CERVANTES_3\programacionIII\ProyectoSegRiv\SeguroRivadavia\GestionSiniestros\obj\Debug\GestionSiniestros.exe
+C:\Users\Usuario\Documents\cervantes\CERVANTES_3\programacionIII\ProyectoSegRiv\SeguroRivadavia\GestionSiniestros\obj\Debug\GestionSiniestros.pdb
+C:\Users\Usuario\Documents\cervantes\CERVANTES_3\programacionIII\ProyectoSegRiv\SeguroRivadavia\GestionSiniestros\obj\Debug\GestionSiniestros.Pantallas.Datos_Asociadosfrm.resources
+C:\Users\Usuario\Documents\cervantes\CERVANTES_3\programacionIII\ProyectoSegRiv\SeguroRivadavia\GestionSiniestros\obj\Debug\GestionSiniestros.Pantallas.Registrofrm.resources
+C:\Users\Usuario\Documents\cervantes\CERVANTES_3\programacionIII\ProyectoSegRiv\SeguroRivadavia\GestionSiniestros\obj\Debug\GestionSiniestros.Pantallas.Menúfrm.resources
+C:\Users\Usuario\Documents\cervantes\CERVANTES_3\programacionIII\ProyectoSegRiv\SeguroRivadavia\GestionSiniestros\obj\Debug\GestionSiniestros.Pantallas.ConsultaSiniestrosfrm.resources
+C:\Users\Usuario\Documents\cervantes\CERVANTES_3\programacionIII\ProyectoSegRiv\SeguroRivadavia\GestionSiniestros\obj\Debug\GestionSiniestros.Pantallas.Loginfrm.resources
+C:\Users\Usuario\Documents\cervantes\CERVANTES_3\programacionIII\ProyectoSegRiv\SeguroRivadavia\GestionSiniestros\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+C:\Users\Usuario\Documents\cervantes\CERVANTES_3\programacionIII\ProyectoSegRiv\SeguroRivadavia\GestionSiniestros\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+C:\Users\Usuario\Documents\cervantes\CERVANTES_3\programacionIII\ProyectoSegRiv\SeguroRivadavia\GestionSiniestros\obj\Debug\GestionSiniestros.Pantallas.formularioBienvenida.resources
