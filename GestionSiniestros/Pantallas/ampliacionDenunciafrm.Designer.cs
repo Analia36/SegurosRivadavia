@@ -38,15 +38,15 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(165, 204);
+            this.label1.Location = new System.Drawing.Point(165, 140);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.Size = new System.Drawing.Size(120, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Ampliación";
+            this.label1.Text = "Ampliación de denuncia";
             // 
             // tbDanios
             // 
-            this.tbDanios.Location = new System.Drawing.Point(331, 204);
+            this.tbDanios.Location = new System.Drawing.Point(331, 140);
             this.tbDanios.Multiline = true;
             this.tbDanios.Name = "tbDanios";
             this.tbDanios.Size = new System.Drawing.Size(195, 70);
@@ -74,7 +74,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(331, 80);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(195, 20);
             this.textBox1.TabIndex = 45;
             // 
             // ampliacionDenunciafrm

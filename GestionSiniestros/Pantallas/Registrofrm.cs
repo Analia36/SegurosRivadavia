@@ -103,5 +103,10 @@ namespace GestionSiniestros.Pantallas
             tbDanios.Text = "";
 
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

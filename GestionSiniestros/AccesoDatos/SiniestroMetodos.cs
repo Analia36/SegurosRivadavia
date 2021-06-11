@@ -49,25 +49,41 @@ namespace GestionSiniestros.AccesoDatos
             DataTable dt = new DataTable();
             var ds = new DataSet();
             string sqlStr = "select s.Num_siniestro as 'Número de Siniestro'," +
-                                   "s.tipo_siniestro as 'Tipo de Siniestro'," +
-                                   "s.Hora as Hora," +
-	                               "s.fecha as Fecha,"+ 
-	                               "s.Declaracion as Declaración," +
-	                               "s.lugar as Lugar," +
-                                   "s.detalle_danios as 'Detalle de daños'," +
-                                   "s.id_poliza as Póliza," +
-	                               "e.Tipo as Estado," +
-	                               "s.id_informe_pericia as Pericia,"+
-                                   "s.id_turno as Turno " +
-                              "from Siniestro s, "+
-                                   "Estado e, "+
-                                   "poliza p, "+
-	                               "Asociados a "+
-                            "where s.id_estado = e.id "+
-                              "and s.id_poliza = p.Id "+
-                              "and a.id = p.id_asociado "+
-                              "and a.dni = "+ dni +
-                            " order by fecha desc " ;
+                            "s.fecha as Fecha," +
+                             "s.lugar as Lugar," +
+                             "e.Tipo as Estado," +
+                             "v.Marca as Marca"+
+                             "v.Modelo as Modelo" +
+                             "v.Patente as Patente" +
+                             "from Siniestro s, " +
+                                   "Estado e, " +
+                                   "vehiculo v,"+
+                             "where s.id_estado = e.id " +
+                             "and a.dni = " + dni +
+                             " order by fecha desc ";
+
+
+
+            /*"select s.Num_siniestro as 'Número de Siniestro'," +
+                               "s.tipo_siniestro as 'Tipo de Siniestro'," +
+                               "s.Hora as Hora," +
+                               "s.fecha as Fecha,"+ 
+                               "s.Declaracion as Declaración," +
+                               "s.lugar as Lugar," +
+                               "s.detalle_danios as 'Detalle de daños'," +
+                               "s.id_poliza as Póliza," +
+                               "e.Tipo as Estado," +
+                               "s.id_informe_pericia as Pericia,"+
+                               "s.id_turno as Turno " +
+                          "from Siniestro s, "+
+                               "Estado e, "+
+                               "poliza p, "+
+                               "Asociados a "+
+                        "where s.id_estado = e.id "+
+                          "and s.id_poliza = p.Id "+
+                          "and a.id = p.id_asociado "+
+                          "and a.dni = "+ dni +
+                        " order by fecha desc " ; QUERY QUE ANDA */
 
             try
             {

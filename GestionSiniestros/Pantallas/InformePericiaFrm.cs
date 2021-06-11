@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GestionSiniestros.Pantallas
 {
-    public partial class consultarInformeFrm : Form
+    public partial class InformePericiaFrm : Form
     {
-        public consultarInformeFrm()
+        public InformePericiaFrm()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace GestionSiniestros.Pantallas
 {
-    partial class consultarInformeFrm
+    partial class InformePericiaFrm
     {
         /// <summary>
         /// Required designer variable.

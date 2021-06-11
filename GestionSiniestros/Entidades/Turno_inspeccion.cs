@@ -12,5 +12,10 @@ namespace GestionSiniestros
         public DateTime hora { get; set; }
         public int idDomicilioInspeccion { get; set; }
         public int idPerito { get; set; }
+        public DateTime fecha { get; set; }
+        public int telefono_socio { get; set; }
+        public string perito { get; set; }
+        public int telefono_perito { get; set; }
+        public Domicilio domicilio { get; set; }
     }
 }

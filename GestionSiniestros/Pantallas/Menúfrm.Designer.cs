@@ -31,10 +31,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ingresoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeSiniestroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificarSiniestroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarSiniestrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestiónAsociadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ingresoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarTurnosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestiónDeVehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarInformeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,9 +61,8 @@
             // ingresoToolStripMenuItem
             // 
             this.ingresoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registroDeSiniestroToolStripMenuItem,
-            this.modificarSiniestroToolStripMenuItem,
-            this.consultarSiniestrosToolStripMenuItem});
+            this.consultarSiniestrosToolStripMenuItem,
+            this.registroDeSiniestroToolStripMenuItem});
             this.ingresoToolStripMenuItem.Name = "ingresoToolStripMenuItem";
             this.ingresoToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.ingresoToolStripMenuItem.Text = "Siniestros";
@@ -77,12 +74,6 @@
             this.registroDeSiniestroToolStripMenuItem.Text = "Registro de Siniestro";
             this.registroDeSiniestroToolStripMenuItem.Click += new System.EventHandler(this.registroDeSiniestroToolStripMenuItem_Click);
             // 
-            // modificarSiniestroToolStripMenuItem
-            // 
-            this.modificarSiniestroToolStripMenuItem.Name = "modificarSiniestroToolStripMenuItem";
-            this.modificarSiniestroToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
-            this.modificarSiniestroToolStripMenuItem.Text = "Ampliación de Denuncia";
-            // 
             // consultarSiniestrosToolStripMenuItem
             // 
             this.consultarSiniestrosToolStripMenuItem.Name = "consultarSiniestrosToolStripMenuItem";
@@ -93,17 +84,10 @@
             // gestiónAsociadosToolStripMenuItem
             // 
             this.gestiónAsociadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ingresoToolStripMenuItem1,
             this.consultarTurnosToolStripMenuItem});
             this.gestiónAsociadosToolStripMenuItem.Name = "gestiónAsociadosToolStripMenuItem";
             this.gestiónAsociadosToolStripMenuItem.Size = new System.Drawing.Size(131, 20);
             this.gestiónAsociadosToolStripMenuItem.Text = "Turnos de Inspección";
-            // 
-            // ingresoToolStripMenuItem1
-            // 
-            this.ingresoToolStripMenuItem1.Name = "ingresoToolStripMenuItem1";
-            this.ingresoToolStripMenuItem1.Size = new System.Drawing.Size(164, 22);
-            this.ingresoToolStripMenuItem1.Text = "Ingreso";
             // 
             // consultarTurnosToolStripMenuItem
             // 
@@ -175,12 +159,10 @@
         private System.Windows.Forms.ToolStripMenuItem ingresoToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem registroDeSiniestroToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modificarSiniestroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarSiniestrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestiónAsociadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestiónDeVehiculosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroDeVehiculoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ingresoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem consultarTurnosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarInformeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;

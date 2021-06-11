@@ -52,6 +52,7 @@
     <Compile Include="AccesoDatos\ADInformePericia.cs" />
     <Compile Include="AccesoDatos\AsociadosMetodos.cs" />
     <Compile Include="AccesoDatos\SiniestroMetodos.cs" />
+    <Compile Include="AccesoDatos\TurnoMetodos.cs" />
     <Compile Include="AccesoDatos\VehiculoMetodos.cs" />
     <Compile Include="Entidades\Asociados.cs" />
     <Compile Include="conexionbd.cs" />
@@ -67,11 +68,11 @@
     <Compile Include="Pantallas\ampliacionDenunciafrm.Designer.cs">
       <DependentUpon>ampliacionDenunciafrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\consultarInformeFrm.cs">
+    <Compile Include="Pantallas\InformePericiaFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\consultarInformeFrm.Designer.cs">
-      <DependentUpon>consultarInformeFrm.cs</DependentUpon>
+    <Compile Include="Pantallas\InformePericiaFrm.Designer.cs">
+      <DependentUpon>InformePericiaFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Pantallas\consultarTurnoFrm.cs">
       <SubType>Form</SubType>
@@ -141,8 +142,8 @@
     <EmbeddedResource Include="Pantallas\ampliacionDenunciafrm.resx">
       <DependentUpon>ampliacionDenunciafrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\consultarInformeFrm.resx">
-      <DependentUpon>consultarInformeFrm.cs</DependentUpon>
+    <EmbeddedResource Include="Pantallas\InformePericiaFrm.resx">
+      <DependentUpon>InformePericiaFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\consultarTurnoFrm.resx">
       <DependentUpon>consultarTurnoFrm.cs</DependentUpon>
@@ -180,6 +181,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

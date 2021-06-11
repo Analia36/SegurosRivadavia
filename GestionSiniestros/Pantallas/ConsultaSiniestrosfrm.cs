@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using GestionSiniestros.AccesoDatos;
+using System.Data;
 
 namespace GestionSiniestros.Pantallas
 {
@@ -36,6 +37,13 @@ namespace GestionSiniestros.Pantallas
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ingresoTurnoFrm frmTurno = new ingresoTurnoFrm(Int32.Parse(tbDni.Text));
+            this.Hide();
+            frmTurno.Show();
         }
     }
 }

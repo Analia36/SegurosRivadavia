@@ -15,6 +15,9 @@ namespace GestionSiniestros
         public int dpto { get; set; }
         public String provincia { get; set; }
         public String localidad { get; set; }
-        public int codPosta { get; set; }
+        public int codPostal { get; set; }
+        public string barrio { get; set; }
+        public string pais { get; set; }
+        public string interseccion { get; set; }
     }
 }
