@@ -44,6 +44,10 @@ namespace GestionSiniestros.Pantallas
                 return;
             }
 
+            this.Hide();
+            formularioBienvenida Bienvenido = new formularioBienvenida();
+            Bienvenido.ShowDialog();
+
 
             AsociadosMetodos asociado = new AsociadosMetodos();
             DataTable resultado = asociado.Login(tbusuario.Text, tbpassword.Text);
@@ -51,7 +55,9 @@ namespace GestionSiniestros.Pantallas
             if (resultado.Rows[0][0].ToString() == "1")
             {
                 this.Hide();
-                new Menúfrm().Show();
+                Menúfrm form = new Menúfrm();
+                form.StartPosition = FormStartPosition.CenterScreen;
+                form.Show();
 
             }
             else
@@ -70,17 +76,7 @@ namespace GestionSiniestros.Pantallas
                 tbusuario.ForeColor = Color.LightGray;
             }
         }
-
-        private void tbpassword_Leave(object sender, EventArgs e)
-        {
-            if (tbpassword.Text == "")
-            {
-                tbpassword.Text = "CONTRASEÑA";
-                tbpassword.ForeColor = Color.DimGray;
-                tbpassword.UseSystemPasswordChar = false;
-            }
-        }
-
+        
         private void tbusuario_Leave(object sender, EventArgs e)
         {
             if (tbusuario.Text == "")
@@ -100,6 +96,16 @@ namespace GestionSiniestros.Pantallas
             }
         }
 
+        private void tbpassword_Leave(object sender, EventArgs e)
+        {
+            if (tbpassword.Text == "")
+            {
+                tbpassword.Text = "CONTRASEÑA";
+                tbpassword.ForeColor = Color.DimGray;
+                tbpassword.UseSystemPasswordChar = false;
+            }
+        }
+
         private void Loginfrm_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
@@ -111,6 +117,11 @@ namespace GestionSiniestros.Pantallas
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void tbusuario_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

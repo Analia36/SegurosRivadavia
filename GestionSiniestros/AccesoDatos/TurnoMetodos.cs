@@ -2,28 +2,25 @@
 using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GestionSiniestros.AccesoDatos
 {
     class TurnoMetodos: conexionbd
     {
-        #region consultas
-        public void InsertarTurno(Turno_inspeccion turno)
+        #region inserts
+        public int InsertarTurno(TurnoInspeccion turno)
 
         {
             Int32 idDomicilio = 0;
+            int idTurno = 0;
             using (SqlCommand cmd = new SqlCommand())
 
             {
                 
                 cmd.Connection = conectar();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = @"INSERT INTO Domiclio(Calle, Numero, Piso, Dpto, Provincia, Localidad, Cod_Postal)
-                            VALUES(@param1,@param2,@param3,@param4,@param5,@param6,@param7)";
+                cmd.CommandText = @"INSERT INTO Domicilio(Calle, Numero, Piso, Dpto, Provincia, Localidad, Cod_Postal)
+                            VALUES(@param1,@param2,@param3,@param4,@param5,@param6,@param7);SELECT SCOPE_IDENTITY();";
 
                 cmd.Parameters.AddWithValue("@param1", turno.domicilio.calle);
                 cmd.Parameters.AddWithValue("@param2", turno.domicilio.numero);
@@ -35,27 +32,65 @@ namespace GestionSiniestros.AccesoDatos
 
                 try
                 {
-                    cmd.ExecuteNonQuery();
+                    //idDomicilio = cmd.ExecuteNonQuery();
                     idDomicilio = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    //int modified = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }                                 
+               
+            
+
+                cmd.Parameters.Clear();
+                
+                cmd.CommandText = @"INSERT INTO Turno_inspeccion(Hora, id_domicilio_inspeccion, id_perito, fecha, telefono_socio, telefono_perito)
+                            VALUES(@param1,@param2,@param3,@param4,@param5,@param6);SELECT SCOPE_IDENTITY();";
+
+
+                cmd.Parameters.AddWithValue("@param1", turno.hora);
+                cmd.Parameters.AddWithValue("@param2", idDomicilio);
+                cmd.Parameters.AddWithValue("@param3", turno.idPerito);
+                cmd.Parameters.AddWithValue("@param4", turno.fecha);
+                cmd.Parameters.AddWithValue("@param5", turno.telefono_socio);
+                cmd.Parameters.AddWithValue("@param6", turno.telefono_perito);                
+
+
+
+                try
+                {
+                    idTurno = Convert.ToInt32(cmd.ExecuteScalar());
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
 
-                cmd.CommandText = @"INSERT INTO Turno_inspeccion(Hora, id_domicilio_inspeccion, id_perito, fecha, telefono_socio, telefono_perito, perito)
-                            VALUES(@param1,@param2,@param3,@param4,@param5,@param6,@param7)";
+            }
 
+            return idTurno;       
+        }
+        #endregion
               
-                cmd.Parameters.AddWithValue("@param1", turno.hora);
-                cmd.Parameters.AddWithValue("@param2", idDomicilio);
-                cmd.Parameters.AddWithValue("@param3", turno.idPerito);
-                cmd.Parameters.AddWithValue("@param4", turno.fecha);
-                cmd.Parameters.AddWithValue("@param5", turno.telefono_socio);
-                cmd.Parameters.AddWithValue("@param6", turno.telefono_perito);
-                cmd.Parameters.AddWithValue("@param7", turno.perito);
 
-                
+        public void bajaTurno(int numSiniestro)
+
+        {
+            using (SqlCommand cmd = new SqlCommand())
+
+            {
+
+                cmd.Connection = conectar();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = @"update Turno_inspeccion 
+                                     set fecha_baja = getdate()
+                                     where num_inspeccion in  ( select id_turno
+                                                                  from Siniestro
+				                                                  where Num_siniestro = @param1)";
+
+                cmd.Parameters.AddWithValue("@param1", numSiniestro);
 
                 try
                 {
@@ -65,19 +100,27 @@ namespace GestionSiniestros.AccesoDatos
                 {
                     MessageBox.Show(ex.Message);
                 }
-
-                // llenar con el resto de los campos
-
             }
         }
 
 
+       
 
-        public DataTable ConsultarTurno(int DNI)
+
+        #region consultas
+
+        public DataTable ConsultarTurno(int num_siniestro)
         {
             DataTable dt = new DataTable();
             var ds = new DataSet();
-            string sqlStr = "";
+            string sqlStr = " SELECT s.Num_siniestro,t.fecha,t.Hora,pe.Nombre,pe.apellido,pe.telefono " +
+                            " FROM Turno_inspeccion t " +
+                            " INNER JOIN Siniestro s " +
+                            " ON t.Num_inspeccion = s.id_turno " +
+                            " INNER JOIN Perito pe " +
+                            " ON pe.Codigo = t.id_perito " +
+                            " WHERE Num_siniestro = " + num_siniestro +
+                            " AND fecha_baja is null"; 
 
             try
             {
@@ -95,6 +138,32 @@ namespace GestionSiniestros.AccesoDatos
             return dt;
 
         }
+
+        public DataTable llenarBoxPeritos()
+        {
+            DataTable dt = new DataTable();
+            
+            string sqlStr = "select zona,codigo"+
+                             " from Perito"+
+                             " order by codigo";
+
+            try
+            {
+
+                var da = new SqlDataAdapter(sqlStr, conectar());
+                da.Fill(dt);            
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+
+            return dt;
+
+        }
+
+
         #endregion
     }
 }

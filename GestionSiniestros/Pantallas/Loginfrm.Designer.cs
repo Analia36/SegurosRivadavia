@@ -36,10 +36,9 @@
             this.btn_ingresar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.label1 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -76,7 +75,8 @@
             this.tbusuario.Name = "tbusuario";
             this.tbusuario.Size = new System.Drawing.Size(320, 20);
             this.tbusuario.TabIndex = 1;
-            this.tbusuario.Text = "an";
+            this.tbusuario.Text = "USUARIO";
+            this.tbusuario.TextChanged += new System.EventHandler(this.tbusuario_TextChanged);
             this.tbusuario.Enter += new System.EventHandler(this.tbusuario_Enter);
             this.tbusuario.Leave += new System.EventHandler(this.tbusuario_Enter);
             // 
@@ -134,16 +134,6 @@
             this.shapeContainer1.TabIndex = 6;
             this.shapeContainer1.TabStop = false;
             // 
-            // lineShape1
-            // 
-            this.lineShape1.BorderColor = System.Drawing.Color.DimGray;
-            this.lineShape1.Enabled = false;
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 349;
-            this.lineShape1.X2 = 668;
-            this.lineShape1.Y1 = 100;
-            this.lineShape1.Y2 = 100;
-            // 
             // lineShape2
             // 
             this.lineShape2.BorderColor = System.Drawing.Color.DimGray;
@@ -153,6 +143,16 @@
             this.lineShape2.X2 = 669;
             this.lineShape2.Y1 = 164;
             this.lineShape2.Y2 = 164;
+            // 
+            // lineShape1
+            // 
+            this.lineShape1.BorderColor = System.Drawing.Color.DimGray;
+            this.lineShape1.Enabled = false;
+            this.lineShape1.Name = "lineShape1";
+            this.lineShape1.X1 = 349;
+            this.lineShape1.X2 = 668;
+            this.lineShape1.Y1 = 100;
+            this.lineShape1.Y2 = 100;
             // 
             // label1
             // 
@@ -164,18 +164,6 @@
             this.label1.Size = new System.Drawing.Size(100, 33);
             this.label1.TabIndex = 7;
             this.label1.Text = "LOGIN";
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel1.Location = new System.Drawing.Point(426, 281);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(182, 17);
-            this.linkLabel1.TabIndex = 0;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "¿Ha olvidado contraseña?";
             // 
             // pictureBox4
             // 
@@ -196,7 +184,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(780, 330);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_ingresar);
             this.Controls.Add(this.tbpassword);
@@ -236,7 +223,6 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

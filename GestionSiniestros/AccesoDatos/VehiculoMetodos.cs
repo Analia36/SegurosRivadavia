@@ -9,11 +9,15 @@ namespace GestionSiniestros.AccesoDatos
     {
         #region consultas
 
-        public DataTable ConsultarPorIdVehiculo(int id)
+        public DataTable ConsultarVehiculos(int id)
         {
             DataTable dt = new DataTable();
             var ds = new DataSet();
-            string sqlStr = "select marca, modelo,anio, color, patente, capital from vehiculo where id = " + id;
+            string sqlStr = "select v.marca as Marca,v.Modelo,v.Anio,v.Color,v.Patente,p.Id as Poliza,p.cobertura as Cobertura"+
+                            " from vehiculo v,"+
+                             "poliza p" +
+                            " where v.Id = p.id_vehiculo"+
+                            " and id_asociado = " + id;
 
             try
             {

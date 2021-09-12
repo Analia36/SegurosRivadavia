@@ -50,17 +50,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoDatos\ADInformePericia.cs" />
+    <Compile Include="AccesoDatos\AmpliacionMetodos.cs" />
     <Compile Include="AccesoDatos\AsociadosMetodos.cs" />
     <Compile Include="AccesoDatos\SiniestroMetodos.cs" />
     <Compile Include="AccesoDatos\TurnoMetodos.cs" />
     <Compile Include="AccesoDatos\VehiculoMetodos.cs" />
+    <Compile Include="Entidades\Ampliacion.cs" />
+    <Compile Include="Entidades\Archivos.cs" />
     <Compile Include="Entidades\Asociados.cs" />
     <Compile Include="conexionbd.cs" />
+    <Compile Include="Entidades\ClaseCarnet.cs" />
+    <Compile Include="Entidades\DatosConductor.cs" />
     <Compile Include="Entidades\Domicilio.cs" />
     <Compile Include="Entidades\Estado.cs" />
-    <Compile Include="Entidades\Informe_pericia.cs" />
+    <Compile Include="Entidades\InformePericia.cs" />
     <Compile Include="Entidades\Perito.cs" />
     <Compile Include="Entidades\Poliza.cs" />
+    <Compile Include="Entidades\SubclaseCarnet.cs" />
     <Compile Include="LogicaNegocio\LNInformePericias.cs" />
     <Compile Include="Pantallas\ampliacionDenunciafrm.cs">
       <SubType>Form</SubType>
@@ -68,17 +74,17 @@
     <Compile Include="Pantallas\ampliacionDenunciafrm.Designer.cs">
       <DependentUpon>ampliacionDenunciafrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pantallas\ConsultarSiniestroInforme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\ConsultarSiniestroInforme.Designer.cs">
+      <DependentUpon>ConsultarSiniestroInforme.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pantallas\InformePericiaFrm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Pantallas\InformePericiaFrm.Designer.cs">
       <DependentUpon>InformePericiaFrm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Pantallas\consultarTurnoFrm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pantallas\consultarTurnoFrm.Designer.cs">
-      <DependentUpon>consultarTurnoFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Pantallas\ConsultaSiniestrosfrm.cs">
       <SubType>Form</SubType>
@@ -86,11 +92,11 @@
     <Compile Include="Pantallas\ConsultaSiniestrosfrm.Designer.cs">
       <DependentUpon>ConsultaSiniestrosfrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantallas\Datos_Asociadosfrm.cs">
+    <Compile Include="Pantallas\DatosAsociadosfrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\Datos_Asociadosfrm.Designer.cs">
-      <DependentUpon>Datos_Asociadosfrm.cs</DependentUpon>
+    <Compile Include="Pantallas\DatosAsociadosfrm.Designer.cs">
+      <DependentUpon>DatosAsociadosfrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Pantallas\Form1.cs">
       <SubType>Form</SubType>
@@ -137,22 +143,23 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entidades\Siniestro.cs" />
-    <Compile Include="Entidades\Turno_inspeccion.cs" />
+    <Compile Include="Entidades\TurnoInspeccion.cs" />
     <Compile Include="Entidades\Vehiculo.cs" />
     <EmbeddedResource Include="Pantallas\ampliacionDenunciafrm.resx">
       <DependentUpon>ampliacionDenunciafrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\ConsultarSiniestroInforme.resx">
+      <DependentUpon>ConsultarSiniestroInforme.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\InformePericiaFrm.resx">
       <DependentUpon>InformePericiaFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\consultarTurnoFrm.resx">
-      <DependentUpon>consultarTurnoFrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\ConsultaSiniestrosfrm.resx">
       <DependentUpon>ConsultaSiniestrosfrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\Datos_Asociadosfrm.resx">
-      <DependentUpon>Datos_Asociadosfrm.cs</DependentUpon>
+    <EmbeddedResource Include="Pantallas\DatosAsociadosfrm.resx">
+      <DependentUpon>DatosAsociadosfrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\formularioBienvenida.resx">
       <DependentUpon>formularioBienvenida.cs</DependentUpon>
@@ -182,6 +189,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -196,11 +204,54 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\1055555715.jpg" />
     <Content Include="Resources\173.jpg" />
+    <Content Include="Resources\cesvi590u.jpg" />
     <Content Include="Resources\descarga.jpg" />
+    <Content Include="Resources\ea1cc57e-6913-4163-9a53-241011b4658b.png" />
+    <Content Include="Resources\foto-Maria-Laura-Benitez--Asesora-de-Seguros-01.jpg" />
+    <Content Include="Resources\ilustr-seguros-rivadavia.jpg" />
     <Content Include="Resources\Seguros-Rivadavia-1024x440.jpg" />
     <Content Include="Resources\Sin título.jpg" />
+    <Content Include="Resources\Sin título757.jpg" />
     <Content Include="Resources\unnamed.jpg" />
+    <Content Include="Resources\v.mp4" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

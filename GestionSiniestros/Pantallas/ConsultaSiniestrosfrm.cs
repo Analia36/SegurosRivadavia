@@ -28,9 +28,10 @@ namespace GestionSiniestros.Pantallas
                MessageBox.Show("El valor ingresado debe ser un número.");
                return;
             }
-
-            SiniestroMetodos siniestros = new SiniestroMetodos();
+                        
+            SiniestroMetodos siniestros = new SiniestroMetodos();            
             dgvSiniestro.DataSource = siniestros.ConsultarSiniestrosPorAsociado(Int32.Parse(tbDni.Text));
+            dgvSiniestro.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
         }
 
@@ -39,11 +40,154 @@ namespace GestionSiniestros.Pantallas
             this.Hide();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnIngresarTurno_Click(object sender, EventArgs e)
         {
-            ingresoTurnoFrm frmTurno = new ingresoTurnoFrm(Int32.Parse(tbDni.Text));
-            this.Hide();
-            frmTurno.Show();
+            String numeroSiniestro = dgvSiniestro.SelectedCells[3].Value.ToString();
+            ingresoTurnoFrm frmTurno = new ingresoTurnoFrm(numeroSiniestro);
+            //this.Hide();
+
+            DateTime fechaInicio = DateTime.Parse(dgvSiniestro.SelectedCells[8].Value.ToString());
+            DateTime fechaFin = DateTime.Parse(dgvSiniestro.SelectedCells[9].Value.ToString());
+
+            if (validarVigenia(fechaInicio, fechaFin))
+            {
+                frmTurno.StartPosition = FormStartPosition.CenterScreen;
+                frmTurno.Show();
+            }         
+
+                   
         }
+
+     
+        private void btnAmpliar_Click(object sender, EventArgs e)
+        {
+            String numeroSiniestro = dgvSiniestro.SelectedCells[3].Value.ToString();
+            ampliacionDenunciafrm frmAmpliacion = new ampliacionDenunciafrm(numeroSiniestro);
+            //this.Hide();
+
+            DateTime fechaInicio = DateTime.Parse(dgvSiniestro.SelectedCells[8].Value.ToString());
+            DateTime fechaFin = DateTime.Parse(dgvSiniestro.SelectedCells[9].Value.ToString());
+
+            if (validarVigenia(fechaInicio, fechaFin))
+            {
+                frmAmpliacion.StartPosition = FormStartPosition.CenterScreen;
+                frmAmpliacion.Show();
+            }
+
+           
+
+
+        }
+
+        private void btnConsultarTurno_Click(object sender, EventArgs e)
+        {
+            DateTime fechaInicio = DateTime.Parse(dgvSiniestro.SelectedCells[8].Value.ToString());
+            DateTime fechaFin = DateTime.Parse(dgvSiniestro.SelectedCells[9].Value.ToString());
+
+            if (validarVigenia(fechaInicio, fechaFin))
+            {
+                String numeroSiniestro = dgvSiniestro.SelectedCells[3].Value.ToString(); /*poner el que tenga siniestro 11*/
+                TurnoMetodos adturno = new TurnoMetodos();
+                dgvConsultarTurno.DataSource = adturno.ConsultarTurno(Int32.Parse(numeroSiniestro));
+                //dgvConsultarTurno.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                /*frmAmpliacion.StartPosition = FormStartPosition.CenterScreen;*/
+                int AltoDelGrid = 0;
+
+                // Sumo el alto de la fila que representa el encabezado de las Columnas     
+                AltoDelGrid = AltoDelGrid + dgvConsultarTurno.ColumnHeadersHeight;
+
+                // Ahora recorro el DataGridView y sumo el alto de cada fila                             
+                for (var i = 0; i < dgvConsultarTurno.Rows.Count; i++)
+                {
+                    AltoDelGrid = AltoDelGrid + dgvConsultarTurno.Rows[i].Height;
+                }
+
+                dgvConsultarTurno.Height = AltoDelGrid;
+            }
+
+            
+        }
+
+        private void btnBaja_Click(object sender, EventArgs e)
+        {
+
+            DateTime fechaInicio = DateTime.Parse(dgvSiniestro.SelectedCells[8].Value.ToString());
+            DateTime fechaFin = DateTime.Parse(dgvSiniestro.SelectedCells[9].Value.ToString());
+
+            if (validarVigenia(fechaInicio, fechaFin))
+            {
+                DialogResult res = MessageBox.Show("Esta seguro que desea dar de baja el turno", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (res == DialogResult.OK)
+                {
+                    String numSiniestro = dgvConsultarTurno.SelectedCells[0].Value.ToString(); /*poner el que tenga siniestro 11*/
+                    TurnoMetodos adturno = new TurnoMetodos();
+
+                    adturno.bajaTurno(Int32.Parse(numSiniestro));
+                    dgvConsultarTurno.DataSource = adturno.ConsultarTurno(Int32.Parse(numSiniestro));
+                    //dgvConsultarTurno.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    /*frmAmpliacion.StartPosition = FormStartPosition.CenterScreen;*/
+                    int AltoDelGrid = 0;
+
+                    // Sumo el alto de la fila que representa el encabezado de las Columnas     
+                    AltoDelGrid = AltoDelGrid + dgvConsultarTurno.ColumnHeadersHeight;
+
+                    // Ahora recorro el DataGridView y sumo el alto de cada fila                             
+                    for (var i = 0; i < dgvConsultarTurno.Rows.Count; i++)
+                    {
+                        AltoDelGrid = AltoDelGrid + dgvConsultarTurno.Rows[i].Height;
+                    }
+
+                    dgvConsultarTurno.Height = AltoDelGrid;
+                    MessageBox.Show("El turno fue dado de baja correctamente.");
+                }
+            }
+
+        }
+
+        private void btnResolucion_Click(object sender, EventArgs e)
+        {
+            DateTime fechaInicio = DateTime.Parse(dgvSiniestro.SelectedCells[8].Value.ToString());
+            DateTime fechaFin = DateTime.Parse(dgvSiniestro.SelectedCells[9].Value.ToString());
+
+            if (validarVigenia(fechaInicio, fechaFin))
+            {
+                String numSiniestro = dgvSiniestro.SelectedCells[3].Value.ToString();
+                String estado = dgvSiniestro.SelectedCells[10].Value.ToString();
+
+                if (estado != "Proceso")
+                {
+
+                    MessageBox.Show("Solo se pueden resolver siniestros en estado en Proceso");
+                    return;
+
+                }
+
+                resolucionFrm frm = new resolucionFrm(numSiniestro);
+                frm.StartPosition = FormStartPosition.CenterScreen;
+                frm.Show();
+            }
+
+        }
+
+
+        private bool validarVigenia(DateTime fechaInicio, DateTime fechaFin)
+        {
+            DateTime fechaHoy = DateTime.Now;
+
+            if (fechaInicio > fechaFin)
+            {
+                MessageBox.Show("La fecha de inicio no puede ser mayor que la de fin");
+                return false;
+            } else if (fechaHoy > fechaFin || fechaHoy < fechaInicio)
+            {
+                MessageBox.Show("La Poliza no se encuentra vigente");
+                return false;
+            }
+
+
+            return true;
+
+        }
+
     }
 }

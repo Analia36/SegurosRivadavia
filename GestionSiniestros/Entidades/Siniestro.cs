@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GestionSiniestros
+namespace GestionSiniestros.Entidades
 {
     class Siniestro
     {
@@ -19,5 +19,7 @@ namespace GestionSiniestros
         public int idTurno { get; set; }
         public String tipoSiniestro { get; set; }
         public String DetalleDanios { get; set; }
+        public DatosConductor conductor { get; set; }
+
     }
 }

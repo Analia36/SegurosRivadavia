@@ -17,16 +17,51 @@ namespace GestionSiniestros.Pantallas
 
         private void registroDeSiniestroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Datos_Asociadosfrm().Show();
+            DatosAsociadosfrm form = new DatosAsociadosfrm();
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.Show();
         }
 
         private void consultarSiniestrosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new ConsultaSiniestrosfrm().Show();
+            ConsultaSiniestrosfrm form =  new ConsultaSiniestrosfrm();
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.Show();
         }
 
         private void registroDeVehiculoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+           // resolucionFrm form = new resolucionFrm();
+           // form.StartPosition = FormStartPosition.CenterScreen;
+           // form.Show();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void consultarTurnosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //ConsultaSiniestrosfrm form = new ConsultaSiniestrosfrm();
+            //form.StartPosition = FormStartPosition.CenterScreen;
+            //form.Show();
+        }
+
+        private void ampliacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ampliacionDenunciafrm form = new ampliacionDenunciafrm("");
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.Show();
+        }
+
+        private void consultarInformeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            // InformePericiaFrm form = new InformePericiaFrm();
+            ConsultarSiniestroInforme form = new ConsultarSiniestroInforme();
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.Show();
 
         }
     }

@@ -9,18 +9,29 @@ namespace GestionSiniestros.AccesoDatos
     {
         #region consultas
 
-        public DataTable ConsultarPorNumeroPoliza(int numeroPoliza) /*consultar por patente (modificar)*/
+        public DataTable ConsultarPorNumeroDni(int dni) /*consultar por patente (modificar)*/
         {
             DataTable dt = new DataTable();
             var ds = new DataSet();            
-            string sqlStr = "SELECT a.Nombre, a.Apellido, a.Dni, a.Telefono, a.email, p.cobertura, p.id_vehiculo, " + 
-                                    "d.Calle,d.Numero,d.Piso,d.Dpto, d.Provincia, d.Localidad, d.Cod_Postal "+
-                               "FROM asociados a, " +
-                                    "poliza p, "+
-	                                "Domicilio d " +
-                            "WHERE a.id = p.id_asociado " +
-                                "and a.id_domicilio = d.Id " +
-                                "and p.id = " + numeroPoliza;
+            string sqlStr = "select a.id,"+
+                            "a.Nombre,"+
+                            "a.Apellido," +
+                            "a.Dni," +
+                            "a.Telefono," +
+                            "a.email," +
+                            "d.Calle," +
+                            "d.Numero," +
+                            "d.Piso," +
+                            "d.Dpto," +
+                            "d.Provincia," +
+                            "d.Localidad," +
+                            "d.Calle," +
+                            "d.Barrio," +
+                            "d.Pais" +
+                         " from Asociados a,"+
+                          " Domicilio d"+
+                        " where a.id_domicilio = d.id"+
+                         " and a.Dni =" + dni;
 
             try
             {

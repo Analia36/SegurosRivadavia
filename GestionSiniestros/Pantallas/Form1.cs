@@ -18,7 +18,7 @@ namespace GestionSiniestros.Pantallas
             InitializeComponent();
 
             AsociadosMetodos asociado = new AsociadosMetodos();
-            asociado.ConsultarPorNumeroPoliza(1);
+            asociado.ConsultarPorNumeroDni(1);
 
         }
     }
