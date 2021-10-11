@@ -1,22 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using GestionSiniestros.AccesoDatos;
-using System.Drawing.Imaging;
-using System.Data.SqlClient;
+using CapaNegocio;
 
 namespace GestionSiniestros.Pantallas
 {
     public partial class InformePericiaFrm : Form
     {
-        
+        InformePericiaNegocio infoPericia = new InformePericiaNegocio();
+
         public InformePericiaFrm(String numeroSiniestro)
         {
             InitializeComponent();
@@ -46,11 +40,9 @@ namespace GestionSiniestros.Pantallas
             FileStream fs = File.OpenRead(ofdSeleccionar.FileName);
             MemoryStream ms = new MemoryStream();
             axAcroPDF1.src = ascii.GetString(ms.ToArray());
-            fs.CopyTo(ms);          
+            fs.CopyTo(ms);
 
-            ADInformePericia documentos = new ADInformePericia();
-            documentos.InsertarArchivo(txtNumeroSiniestro.Text, ofdSeleccionar.FileName, ms.ToArray());
-            
+            infoPericia.InsertarArchivo(txtNumeroSiniestro.Text, ofdSeleccionar.FileName, ms.ToArray());            
 
             MessageBox.Show("Archivo insertado correctamente");
 
@@ -61,8 +53,8 @@ namespace GestionSiniestros.Pantallas
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             Encoding ascii = Encoding.ASCII;
-            ADInformePericia adInforme = new ADInformePericia();
-            byte[] pdf = adInforme.getDocument(int.Parse(txtNumeroSiniestro.Text));
+            //ADInformePericia adInforme = new ADInformePericia();
+            byte[] pdf = infoPericia.getDocument(int.Parse(txtNumeroSiniestro.Text));
 
             if (pdf != null && pdf.Any())
             {

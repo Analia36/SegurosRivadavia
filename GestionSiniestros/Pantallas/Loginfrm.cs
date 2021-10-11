@@ -7,15 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GestionSiniestros.AccesoDatos;
 using GestionSiniestros.Pantallas;
 using System.Runtime.InteropServices;
+using CapaNegocio;
 
 
 namespace GestionSiniestros.Pantallas
 {
     public partial class Loginfrm : Form
     {
+        AsociadosMetodosNegocio asociado = new AsociadosMetodosNegocio();
         public Loginfrm()
         {
             InitializeComponent();
@@ -49,7 +50,7 @@ namespace GestionSiniestros.Pantallas
             Bienvenido.ShowDialog();
 
 
-            AsociadosMetodos asociado = new AsociadosMetodos();
+            
             DataTable resultado = asociado.Login(tbusuario.Text, tbpassword.Text);
 
             if (resultado.Rows[0][0].ToString() == "1")

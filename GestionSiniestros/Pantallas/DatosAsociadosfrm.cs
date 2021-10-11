@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Data;
-
 using System.Windows.Forms;
-using GestionSiniestros.AccesoDatos;
+using CapaNegocio;
 
 namespace GestionSiniestros.Pantallas
 {
     public partial class DatosAsociadosfrm : Form
     {
+        AsociadosMetodosNegocio asociado = new AsociadosMetodosNegocio();
+        VehiculoMetodoNegocio vehiculo = new VehiculoMetodoNegocio();
         public DatosAsociadosfrm()
         {
             InitializeComponent();
@@ -36,7 +37,7 @@ namespace GestionSiniestros.Pantallas
                 return;
             }
 
-            AsociadosMetodos asociado = new AsociadosMetodos();
+            
             DataTable tableDatosAsociados = asociado.ConsultarPorNumeroDni(Int32.Parse(tbdni.Text));
 
             if (tableDatosAsociados.Rows.Count == 0)
@@ -46,7 +47,7 @@ namespace GestionSiniestros.Pantallas
 
             }
 
-            VehiculoMetodos vehiculo = new VehiculoMetodos();
+            
             DataTable tableDatosVehiculo = vehiculo.ConsultarVehiculos(Int32.Parse(tableDatosAsociados.Rows[0]["id"].ToString()));
             tableDatosAsociados.Columns.Remove("id");
             dtvasociado.DataSource = tableDatosAsociados;

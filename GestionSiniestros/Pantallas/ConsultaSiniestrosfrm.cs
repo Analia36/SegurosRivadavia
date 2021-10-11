@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Windows.Forms;
-using GestionSiniestros.AccesoDatos;
-using System.Data;
+using CapaNegocio;
 
 namespace GestionSiniestros.Pantallas
 {
     public partial class ConsultaSiniestrosfrm : Form
     {
+        SiniestroMetodosNegocio siniestros = new SiniestroMetodosNegocio();
+        TurnoMetodosNegocio adturno = new TurnoMetodosNegocio();
         public ConsultaSiniestrosfrm()
         {
             InitializeComponent();
@@ -28,8 +29,7 @@ namespace GestionSiniestros.Pantallas
                MessageBox.Show("El valor ingresado debe ser un número.");
                return;
             }
-                        
-            SiniestroMetodos siniestros = new SiniestroMetodos();            
+            
             dgvSiniestro.DataSource = siniestros.ConsultarSiniestrosPorAsociado(Int32.Parse(tbDni.Text));
             dgvSiniestro.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
@@ -87,7 +87,7 @@ namespace GestionSiniestros.Pantallas
             if (validarVigenia(fechaInicio, fechaFin))
             {
                 String numeroSiniestro = dgvSiniestro.SelectedCells[3].Value.ToString(); /*poner el que tenga siniestro 11*/
-                TurnoMetodos adturno = new TurnoMetodos();
+                
                 dgvConsultarTurno.DataSource = adturno.ConsultarTurno(Int32.Parse(numeroSiniestro));
                 //dgvConsultarTurno.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 /*frmAmpliacion.StartPosition = FormStartPosition.CenterScreen;*/
@@ -120,7 +120,7 @@ namespace GestionSiniestros.Pantallas
                 if (res == DialogResult.OK)
                 {
                     String numSiniestro = dgvConsultarTurno.SelectedCells[0].Value.ToString(); /*poner el que tenga siniestro 11*/
-                    TurnoMetodos adturno = new TurnoMetodos();
+                    
 
                     adturno.bajaTurno(Int32.Parse(numSiniestro));
                     dgvConsultarTurno.DataSource = adturno.ConsultarTurno(Int32.Parse(numSiniestro));

@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Windows.Forms;
-using GestionSiniestros.AccesoDatos;
-using GestionSiniestros.Entidades;
+using CapaNegocio;
+using CapaEntidad;
 
 namespace GestionSiniestros.Pantallas
 {
     public partial class Registrofrm : Form
     {
-        
+        SiniestroMetodosNegocio adSiniestro = new SiniestroMetodosNegocio();
+        SiniestroEntidad siniestro = new SiniestroEntidad();
 
         public Registrofrm(int poliza)
         {
@@ -144,8 +145,7 @@ namespace GestionSiniestros.Pantallas
 
 
             // 
-            SiniestroMetodos AdSiniestro = new SiniestroMetodos();
-            Siniestro siniestro = new Siniestro();          
+                      
 
             siniestro.hora = DateTime.Parse(dateTimeHora.Value.ToLongTimeString());
             siniestro.fecha = DateTime.Parse(datetime_siniestro.Value.ToShortDateString());
@@ -158,7 +158,7 @@ namespace GestionSiniestros.Pantallas
             siniestro.tipoSiniestro = cbtipodesiniestro.SelectedItem.ToString();
             siniestro.DetalleDanios = tbDanios.Text;
 
-            DatosConductor conductor = new DatosConductor();
+            ConductorEntidad conductor = new ConductorEntidad();
             conductor.nombre = txtNombre.Text;
             conductor.apellido = txtApellido.Text;
             conductor.dni = Int32.Parse(txtDni.Text);
@@ -167,7 +167,7 @@ namespace GestionSiniestros.Pantallas
             conductor.vtoLicencia = DateTime.Parse(dtpVtoLicencia.Value.ToShortDateString());
             siniestro.conductor = conductor;
 
-            AdSiniestro.InsertarSiniestro(siniestro);
+            adSiniestro.InsertarSiniestro(siniestro);
 
             MessageBox.Show("El Siniestro fue registrado correctamente.");
 
@@ -196,8 +196,7 @@ namespace GestionSiniestros.Pantallas
             txtDni.Text = "";
             txtProvincia.Text = "";
             datetime_siniestro.Value = DateTime.Today;
-            dateTimeHora.Value = DateTime.Now;
-            SiniestroMetodos adSiniestro = new SiniestroMetodos();
+            dateTimeHora.Value = DateTime.Now;            
             cboClase.DataSource = adSiniestro.llenarBoxClaseCarnet();
 
         }
@@ -206,7 +205,7 @@ namespace GestionSiniestros.Pantallas
         private void Registrofrm_Load(object sender, EventArgs e)
         {
             datetime_siniestro.MaxDate = DateTime.Now;
-            SiniestroMetodos adSiniestro = new SiniestroMetodos();
+            //SiniestroMetodos adSiniestro = new SiniestroMetodos();
             cboClase.DataSource = adSiniestro.llenarBoxClaseCarnet();
             cboClase.DisplayMember = "tipo";
             cboClase.ValueMember = "id";
@@ -218,7 +217,7 @@ namespace GestionSiniestros.Pantallas
 
         private void cboClase_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SiniestroMetodos adSiniestro = new SiniestroMetodos();
+            
             int valor;
             bool isNumeric = int.TryParse(cboClase.SelectedValue.ToString(), out valor);
 

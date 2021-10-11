@@ -1,19 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using GestionSiniestros.AccesoDatos;
+using CapaNegocio;
 
 
 namespace GestionSiniestros.Pantallas
 {
     public partial class ConsultarSiniestroInforme : Form
     {
+        SiniestroMetodosNegocio siniestros = new SiniestroMetodosNegocio();
         public ConsultarSiniestroInforme()
         {
             InitializeComponent();
@@ -35,8 +30,7 @@ namespace GestionSiniestros.Pantallas
                 MessageBox.Show("El valor ingresado debe ser un número.");
                 return;
             }
-
-            SiniestroMetodos siniestros = new SiniestroMetodos();
+                        
 
             DataTable tableSiniestros = siniestros.ConsultarSiniestrosPorAsociado(Int32.Parse(tbDni.Text));
 

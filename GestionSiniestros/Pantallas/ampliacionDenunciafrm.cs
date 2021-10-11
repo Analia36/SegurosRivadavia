@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Windows.Forms;
-using GestionSiniestros.AccesoDatos;
+using CapaNegocio;
+using CapaEntidad;
 
-    namespace GestionSiniestros.Pantallas
+
+namespace GestionSiniestros.Pantallas
 {
+    
     public partial class ampliacionDenunciafrm : Form
     {
-        
+        AmpliacionMetodosNegocio ampliacionMetodos = new AmpliacionMetodosNegocio();
+        AmpliacionEntidad oampliacion = new AmpliacionEntidad();
         public ampliacionDenunciafrm(String numSiniestro)
         {
             InitializeComponent();
@@ -40,14 +44,14 @@ using GestionSiniestros.AccesoDatos;
                 }
 
 
-                AmpliacionMetodos  Adampliacion = new AmpliacionMetodos();
-                Ampliacion  oampliacion = new Ampliacion ();
+                //AmpliacionMetodos  Adampliacion = new AmpliacionMetodos();
+                //Ampliacion  oampliacion = new Ampliacion ();
                 oampliacion.Num_siniestro = int.Parse(txtNumSiniestro.Text);
                 oampliacion.AmpliacionSin = tbAmp.Text;
                 oampliacion.Fecha = DateTime.Parse(fechaAmp.Value.ToShortDateString());
 
 
-                 Adampliacion.insertarAmpliacion(oampliacion);
+                ampliacionMetodos.insertarAmpliacion(oampliacion);
 
 
                 MessageBox.Show("La ampliación fue registrada correctamente.");
@@ -73,8 +77,8 @@ using GestionSiniestros.AccesoDatos;
                 return;
             }
 
-            AmpliacionMetodos historial = new AmpliacionMetodos();
-            dgvHistorial.DataSource = historial.consultarhistorial(Int32.Parse(txtNumSiniestro.Text));
+            //AmpliacionMetodos historial = new AmpliacionMetodos();
+            dgvHistorial.DataSource = ampliacionMetodos.consultarhistorial(Int32.Parse(txtNumSiniestro.Text));
 
             int AltoDelGrid = 0;
 

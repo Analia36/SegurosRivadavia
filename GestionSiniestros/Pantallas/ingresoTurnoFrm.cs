@@ -1,19 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using GestionSiniestros.AccesoDatos;
+using CapaNegocio;
+using CapaEntidad;
 
 namespace GestionSiniestros.Pantallas
 {
     public partial class ingresoTurnoFrm : Form
     {
-        private TurnoMetodos adturno = new TurnoMetodos();
+        private SiniestroMetodosNegocio adsiniestro = new SiniestroMetodosNegocio();
+        private TurnoMetodosNegocio adturno = new TurnoMetodosNegocio();
+        TurnoInspeccionEntidad turno = new TurnoInspeccionEntidad();
+        DomicilioEntidad domicilio = new DomicilioEntidad();
 
         public ingresoTurnoFrm(string numeroSiniestro)
         {            
@@ -116,8 +113,7 @@ namespace GestionSiniestros.Pantallas
 
 
 
-            TurnoInspeccion turno = new TurnoInspeccion();
-            Domicilio domicilio = new Domicilio();            
+            
 
             turno.fecha = DateTime.Parse(dtpFecha_turno.Value.ToShortDateString());
             turno.hora = DateTime.Parse(dtpHora_turno.Value.ToLongTimeString());
@@ -144,7 +140,7 @@ namespace GestionSiniestros.Pantallas
 
             // paso el estado para poner en proceso
 
-            SiniestroMetodos adsiniestro = new SiniestroMetodos();
+            
             adsiniestro.updateEstado(Int32.Parse(txtNumSiniestro.Text),2,idturno);
 
             

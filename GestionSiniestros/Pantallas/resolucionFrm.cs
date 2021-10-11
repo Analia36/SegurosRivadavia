@@ -1,18 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using GestionSiniestros.AccesoDatos;
+using CapaNegocio;
+
 
 namespace GestionSiniestros.Pantallas
 {
     public partial class resolucionFrm : Form
     {
+        SiniestroMetodosNegocio siniestro = new SiniestroMetodosNegocio();
         public resolucionFrm(String numeroSiniestro)
         {
             InitializeComponent();
@@ -66,7 +61,7 @@ namespace GestionSiniestros.Pantallas
             else MessageBox.Show("No corresponde cobertura TOTAL");
 
             
-            SiniestroMetodos siniestro = new SiniestroMetodos();
+            
             siniestro.updateFinalizarSiniestro(Int32.Parse(txtNumeroSiniestro.Text));
             MessageBox.Show("El siniestro ha sido resuelto y pasado a estado finalizado");
                         
