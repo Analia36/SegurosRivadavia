@@ -41,6 +41,7 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -93,6 +94,7 @@
             this.dgvHistorial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHistorial.Size = new System.Drawing.Size(740, 96);
             this.dgvHistorial.TabIndex = 46;
+            this.dgvHistorial.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHistorial_CellContentClick);
             // 
             // label2
             // 
@@ -111,7 +113,7 @@
             this.txtNumSiniestro.Location = new System.Drawing.Point(198, 13);
             this.txtNumSiniestro.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumSiniestro.Name = "txtNumSiniestro";
-            this.txtNumSiniestro.Size = new System.Drawing.Size(259, 23);
+            this.txtNumSiniestro.Size = new System.Drawing.Size(259, 22);
             this.txtNumSiniestro.TabIndex = 45;
             this.txtNumSiniestro.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -137,7 +139,7 @@
             this.fechaAmp.Location = new System.Drawing.Point(198, 183);
             this.fechaAmp.Margin = new System.Windows.Forms.Padding(4);
             this.fechaAmp.Name = "fechaAmp";
-            this.fechaAmp.Size = new System.Drawing.Size(259, 23);
+            this.fechaAmp.Size = new System.Drawing.Size(259, 22);
             this.fechaAmp.TabIndex = 48;
             // 
             // label3
@@ -193,12 +195,29 @@
             this.pictureBox1.TabIndex = 52;
             this.pictureBox1.TabStop = false;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.button2.FlatAppearance.BorderSize = 2;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.DimGray;
+            this.button2.Location = new System.Drawing.Point(567, 329);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 32);
+            this.button2.TabIndex = 53;
+            this.button2.Text = "Imprimir";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // ampliacionDenunciafrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(762, 364);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnSalir);
@@ -211,7 +230,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tbAmp);
             this.Controls.Add(this.label1);
-            this.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ampliacionDenunciafrm";
@@ -240,5 +259,6 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button2;
     }
 }

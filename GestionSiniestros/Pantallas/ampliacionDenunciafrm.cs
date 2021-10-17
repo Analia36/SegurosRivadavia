@@ -113,7 +113,16 @@ namespace GestionSiniestros.Pantallas
 
         }
 
-      
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AmpliacionViewer rep = new AmpliacionViewer();
+            rep.ShowDialog();
+        }
+
+        private void dgvHistorial_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
 

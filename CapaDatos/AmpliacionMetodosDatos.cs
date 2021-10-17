@@ -84,5 +84,34 @@ namespace CapaDatos
 
 
         #endregion
+
+        public DataTable ConsultarAmpliacionReporte()
+        {
+
+            //var ds = new DataSet();
+            var dt = new DataTable();
+            try
+            {
+                string sqlStr = "Select *,  Numero as Num_siniestro, Fecha as Fecha, Ampliacion as AmpliacionSin from Ampliacion";
+                //var c = AbrirConexion();
+                var ds = new DataSet();
+                var da = new SqlDataAdapter(sqlStr, conectar());
+                ds = new DataSet();
+                da.Fill(ds);
+                dt = ds.Tables[0];
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                //  MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK);
+                return dt;
+            }
+        }
+
+
     }
 }
+
+
+    

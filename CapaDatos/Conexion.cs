@@ -8,7 +8,7 @@ namespace CapaDatos
     public class Conexion
     {
         private SqlConnection sCon = new SqlConnection();
-        private string con = "Data Source=DESKTOP-F19K3V3; Initial Catalog=Seguros_Rivadavia; Integrated Security=true";
+        private string con = "Data Source=JYA; Initial Catalog=Seguros_Rivadavia; Integrated Security=true";
         /* variables de coexion que necesito configurar para conectar al sql server. 1° varaible, data source: definicion del nombre del servidor
          mas la conexion q hago a la base. La segunda variable, es la seguridad integrada: SSPI (que estoy usando la seguridad de windows.
          y la tercer variable es el catálogo inicial: le dice de mi motor de bd con q base me quiero conectar).
