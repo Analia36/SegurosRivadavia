@@ -45,6 +45,7 @@
     <Compile Include="AmpliacionMetodosDatos.cs" />
     <Compile Include="AsociadosMetodosDatos.cs" />
     <Compile Include="Conexion.cs" />
+    <Compile Include="DataAccessNotification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SiniestroMetodosDatos.cs" />
     <Compile Include="TurnoMetodosDatos.cs" />

@@ -9,3 +9,6 @@ C:\Users\Usuario\Documents\cervantes\CERVANTES_3\programacionIII\ProyectoSegRiv\
 C:\Users\Usuario\Documents\cervantes\CERVANTES_3\programacionIII\ProyectoSegRiv\SeguroRivadavia\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
 C:\Users\Usuario\Documents\cervantes\CERVANTES_3\programacionIII\ProyectoSegRiv\SeguroRivadavia\CapaNegocio\obj\Debug\CapaNegocio.dll
 C:\Users\Usuario\Documents\cervantes\CERVANTES_3\programacionIII\ProyectoSegRiv\SeguroRivadavia\CapaNegocio\obj\Debug\CapaNegocio.pdb
+C:\Users\Usuario\Documents\cervantes\CERVANTES_3\programacionIII\ProyectoSegRiv\SeguroRivadavia\CapaNegocio\bin\Debug\Tulpep.NotificationWindow.dll
+C:\Users\Usuario\Documents\cervantes\CERVANTES_3\programacionIII\ProyectoSegRiv\SeguroRivadavia\CapaNegocio\obj\Debug\CapaNegocio.Properties.Resources.resources
+C:\Users\Usuario\Documents\cervantes\CERVANTES_3\programacionIII\ProyectoSegRiv\SeguroRivadavia\CapaNegocio\obj\Debug\CapaNegocio.csproj.GenerateResource.cache

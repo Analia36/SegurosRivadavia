@@ -4,12 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GestionSiniestros.Pantallas;
+using CapaNegocio;
 
 
 namespace GestionSiniestros
 {
     static class Program
-    {
+    {        
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -17,7 +18,7 @@ namespace GestionSiniestros
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            Application.SetCompatibleTextRenderingDefault(false);            
             // Application.Run(new Form1());
             Application.Run(new Loginfrm());
         }

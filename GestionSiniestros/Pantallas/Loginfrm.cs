@@ -17,6 +17,7 @@ namespace GestionSiniestros.Pantallas
     public partial class Loginfrm : Form
     {
         AsociadosMetodosNegocio asociado = new AsociadosMetodosNegocio();
+        NotificationTask notification = new NotificationTask();
         public Loginfrm()
         {
             InitializeComponent();
@@ -48,9 +49,7 @@ namespace GestionSiniestros.Pantallas
             this.Hide();
             formularioBienvenida Bienvenido = new formularioBienvenida();
             Bienvenido.ShowDialog();
-
-
-            
+                                    
             DataTable resultado = asociado.Login(tbusuario.Text, tbpassword.Text);
 
             if (resultado.Rows[0][0].ToString() == "1")
@@ -59,6 +58,7 @@ namespace GestionSiniestros.Pantallas
                 Menúfrm form = new Menúfrm();
                 form.StartPosition = FormStartPosition.CenterScreen;
                 form.Show();
+                notification.invokeExecutionNotificationWithoutTurn();
 
             }
             else

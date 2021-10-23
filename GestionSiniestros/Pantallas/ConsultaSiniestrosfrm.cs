@@ -8,9 +8,11 @@ namespace GestionSiniestros.Pantallas
     {
         SiniestroMetodosNegocio siniestros = new SiniestroMetodosNegocio();
         TurnoMetodosNegocio adturno = new TurnoMetodosNegocio();
+        NotificationTask notification = new NotificationTask();
         public ConsultaSiniestrosfrm()
         {
             InitializeComponent();
+            notification.invokeExecutionNotificationWithoutSolve();
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)

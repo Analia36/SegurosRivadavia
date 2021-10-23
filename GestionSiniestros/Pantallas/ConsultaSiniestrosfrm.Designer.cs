@@ -141,7 +141,7 @@
             this.btnTurno.Location = new System.Drawing.Point(300, 398);
             this.btnTurno.Margin = new System.Windows.Forms.Padding(4);
             this.btnTurno.Name = "btnTurno";
-            this.btnTurno.Size = new System.Drawing.Size(156, 32);
+            this.btnTurno.Size = new System.Drawing.Size(200, 32);
             this.btnTurno.TabIndex = 6;
             this.btnTurno.Text = "Turno de inspección";
             this.btnTurno.UseVisualStyleBackColor = false;
@@ -155,7 +155,7 @@
             this.btnConsultarTurno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsultarTurno.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultarTurno.ForeColor = System.Drawing.Color.DimGray;
-            this.btnConsultarTurno.Location = new System.Drawing.Point(486, 398);
+            this.btnConsultarTurno.Location = new System.Drawing.Point(554, 398);
             this.btnConsultarTurno.Margin = new System.Windows.Forms.Padding(4);
             this.btnConsultarTurno.Name = "btnConsultarTurno";
             this.btnConsultarTurno.Size = new System.Drawing.Size(137, 32);
@@ -204,7 +204,7 @@
             this.btnResolucion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnResolucion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResolucion.ForeColor = System.Drawing.Color.DimGray;
-            this.btnResolucion.Location = new System.Drawing.Point(643, 398);
+            this.btnResolucion.Location = new System.Drawing.Point(717, 398);
             this.btnResolucion.Margin = new System.Windows.Forms.Padding(4);
             this.btnResolucion.Name = "btnResolucion";
             this.btnResolucion.Size = new System.Drawing.Size(137, 32);
