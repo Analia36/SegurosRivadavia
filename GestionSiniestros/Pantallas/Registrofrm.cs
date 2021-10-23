@@ -147,16 +147,16 @@ namespace GestionSiniestros.Pantallas
             // 
                       
 
-            siniestro.hora = DateTime.Parse(dateTimeHora.Value.ToLongTimeString());
-            siniestro.fecha = DateTime.Parse(datetime_siniestro.Value.ToShortDateString());
-            siniestro.declaracion = tbDeclaracion.Text;
-            siniestro.lugar = "Localidad: " + txtLocalidad.Text + "- Calle: " + tbcalle.Text + "- Altura: " + tbAltura.Text + "- Interseccion: " + tbinterseccion.Text
+            siniestro.Hora = DateTime.Parse(dateTimeHora.Value.ToLongTimeString());
+            siniestro.Fecha = DateTime.Parse(datetime_siniestro.Value.ToShortDateString());
+            siniestro.Declaracion = tbDeclaracion.Text;
+            siniestro.Lugar = "Localidad: " + txtLocalidad.Text + "- Calle: " + tbcalle.Text + "- Altura: " + tbAltura.Text + "- Interseccion: " + tbinterseccion.Text
                               + "- Barrio: " + txtBarrio.Text + "- Provincia: " + cbprovincia.SelectedItem.ToString() + "- Cod Postal: " + tbcodpost.Text + "- Pais: " + cbpais.SelectedItem.ToString();
 
-            siniestro.idPoliza = Int32.Parse(txtPoliza.Text);
-            siniestro.idEstado = 1; // estado inicial
-            siniestro.tipoSiniestro = cbtipodesiniestro.SelectedItem.ToString();
-            siniestro.DetalleDanios = tbDanios.Text;
+            siniestro.id_poliza = Int32.Parse(txtPoliza.Text);
+            siniestro.id_estado = 1; // estado inicial
+            siniestro.tipo_siniestro = cbtipodesiniestro.SelectedItem.ToString();
+            siniestro.detalle_danios = tbDanios.Text;
 
             ConductorEntidad conductor = new ConductorEntidad();
             conductor.nombre = txtNombre.Text;

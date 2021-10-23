@@ -171,3 +171,7 @@ C:\Users\alina\Desktop\Git\SegurosRivadavia\GestionSiniestros\bin\Debug\Interop.
 C:\Users\alina\Desktop\Git\SegurosRivadavia\GestionSiniestros\bin\Debug\AxInterop.AcroPDFLib.dll
 C:\Users\alina\Desktop\Git\SegurosRivadavia\GestionSiniestros\bin\Debug\AxInterop.WMPLib.dll
 C:\Users\alina\Desktop\Git\SegurosRivadavia\GestionSiniestros\obj\Debug\GestionSiniestros.exe.config
+C:\Users\alina\Desktop\Git\SegurosRivadavia\GestionSiniestros\obj\Debug\GestionSiniestros.Pantallas.ReporteEstados.resources
+C:\Users\alina\Desktop\Git\SegurosRivadavia\GestionSiniestros\obj\Debug\GestionSiniestros.Pantallas.DenunciaAdminViewer.resources
+C:\Users\alina\Desktop\Git\SegurosRivadavia\GestionSiniestros\obj\Debug\GestionSiniestros.Pantallas.DenunciaViewerMetrica.resources
+C:\Users\alina\Desktop\Git\SegurosRivadavia\GestionSiniestros\obj\Debug\GestionSiniestros.csproj.CopyComplete

@@ -38,6 +38,9 @@
             this.consultarInformeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeVehiculoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.denunciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ampliacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -50,7 +53,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ingresoToolStripMenuItem,
             this.gestiónDeVehiculosToolStripMenuItem,
-            this.salirToolStripMenuItem});
+            this.salirToolStripMenuItem,
+            this.mToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -125,6 +129,29 @@
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
+            // mToolStripMenuItem
+            // 
+            this.mToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.denunciasToolStripMenuItem,
+            this.ampliacionesToolStripMenuItem});
+            this.mToolStripMenuItem.Name = "mToolStripMenuItem";
+            this.mToolStripMenuItem.Size = new System.Drawing.Size(165, 21);
+            this.mToolStripMenuItem.Text = "Reportes y Metricas";
+            // 
+            // denunciasToolStripMenuItem
+            // 
+            this.denunciasToolStripMenuItem.Name = "denunciasToolStripMenuItem";
+            this.denunciasToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.denunciasToolStripMenuItem.Text = "Denuncias";
+            this.denunciasToolStripMenuItem.Click += new System.EventHandler(this.denunciasToolStripMenuItem_Click);
+            // 
+            // ampliacionesToolStripMenuItem
+            // 
+            this.ampliacionesToolStripMenuItem.Name = "ampliacionesToolStripMenuItem";
+            this.ampliacionesToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.ampliacionesToolStripMenuItem.Text = "Estados de siniestros";
+            this.ampliacionesToolStripMenuItem.Click += new System.EventHandler(this.ampliacionesToolStripMenuItem_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -176,5 +203,8 @@
         private System.Windows.Forms.ToolStripMenuItem consultarInformeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ampliacionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem denunciasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ampliacionesToolStripMenuItem;
     }
 }

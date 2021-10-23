@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using CapaDatos;
 using CapaEntidad;
 
@@ -13,14 +14,39 @@ namespace CapaNegocio
             return ObjAMD.insertarAmpliacion();
         }
 
-        public DataTable consultarhistorial(int Num_siniestro)
+        public DataTable consultarhistorial(int Num_Siniestro)
         {
-            return ObjAMD.consultarhistorial(Num_siniestro);
+            return ObjAMD.consultarhistorial(Num_Siniestro);
         }
         public DataTable ConsultarAmpliacionReporte()
-            {
+        {
                 return ObjAMD.ConsultarAmpliacionReporte();
             }
-        }
+
+
+
+
+        //public object ConsultarAmpliacionReporte()
+        //{
+        //    throw new NotImplementedException();
+
+
+        //public object ConsultarAmpliacionReporte()
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+
+        //   public DataTable ConsultarAmpliacionReporteNum()
+
+        //        {
+
+        //        return objAMD.ConsultarAmpliacionReporteNum();
+        //}
     }
+
+
+    }
+
+    
 

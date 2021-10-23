@@ -22,7 +22,6 @@ C:\Users\alina\Desktop\Git\SegurosRivadavia\CapaNegocio\bin\Debug\CapaDatos.pdb
 C:\Users\alina\Desktop\Git\SegurosRivadavia\CapaNegocio\bin\Debug\CapaEntidad.pdb
 C:\Users\alina\Desktop\Git\SegurosRivadavia\CapaNegocio\obj\Debug\CapaNegocio.csproj.AssemblyReference.cache
 C:\Users\alina\Desktop\Git\SegurosRivadavia\CapaNegocio\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
-C:\Users\alina\Desktop\Git\SegurosRivadavia\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
 C:\Users\alina\Desktop\Git\SegurosRivadavia\CapaNegocio\obj\Debug\CapaNegocio.dll
 C:\Users\alina\Desktop\Git\SegurosRivadavia\CapaNegocio\obj\Debug\CapaNegocio.pdb
 C:\Users\alina\Desktop\Git\SegurosRivadavia\CapaNegocio\bin\Debug\Microsoft.ReportViewer.Common.dll
@@ -115,3 +114,4 @@ C:\Users\alina\Desktop\Git\SegurosRivadavia\CapaNegocio\bin\Debug\zh-CHT\Microso
 C:\Users\alina\Desktop\Git\SegurosRivadavia\CapaNegocio\bin\Debug\es\Microsoft.VisualStudio.Data.Services.resources.dll
 C:\Users\alina\Desktop\Git\SegurosRivadavia\CapaNegocio\bin\Debug\es\Microsoft.VisualStudio.Data.Core.resources.dll
 C:\Users\alina\Desktop\Git\SegurosRivadavia\CapaNegocio\bin\Debug\es\Microsoft.VisualStudio.GraphModel.resources.dll
+C:\Users\alina\Desktop\Git\SegurosRivadavia\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete

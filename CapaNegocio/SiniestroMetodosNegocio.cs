@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using CapaDatos;
 using CapaEntidad;
 
@@ -19,26 +20,43 @@ namespace CapaNegocio
             return objSMD.ConsultarSiniestrosPorAsociado(dni);
         }
 
-        public void updateEstado(int numSiniestro, int estado, int idturno)
+        public DataTable ConsultarReporteDenuncia()
         {
-            objSMD.updateEstado(numSiniestro,estado,idturno);
+            return objSMD.ConsultarReporteDenuncia();
         }
 
-        public DataTable llenarBoxClaseCarnet()
+        public void updateFinalizarSiniestro(int v)
         {
-           return objSMD.llenarBoxClaseCarnet();
+            throw new NotImplementedException();
         }
 
-        public DataTable llenarBoxSubClaseCarnet(int idClase)
+        public object llenarBoxSubClaseCarnet(int valor)
         {
-            return objSMD.llenarBoxSubClaseCarnet(idClase);
+            throw new NotImplementedException();
+        }
+
+        public object llenarBoxClaseCarnet()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void updateEstado(int v1, int v2, int idturno)
+        {
+            throw new NotImplementedException();
         }
 
 
-        public void updateFinalizarSiniestro(int numSiniestro)
-        {
-            objSMD.updateFinalizarSiniestro(numSiniestro);
-        }
 
-     }
+       // public void ConsultarDenuncia();
+       // {
+
+       // return objSMD.ConsultarDenuncia()
+       //}
+    //agregando metodo para traer datos de la denunca consultada reporte
 }
+
+}
+
+
+
+

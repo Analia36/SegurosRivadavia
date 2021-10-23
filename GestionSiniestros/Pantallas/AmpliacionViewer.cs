@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
 using Microsoft.Reporting.WinForms;
+using CapaDatos; 
 
 namespace GestionSiniestros.Pantallas
 {
@@ -26,6 +27,21 @@ namespace GestionSiniestros.Pantallas
             this.reportViewer1.RefreshReport();
         }
 
+        private void Ampliacion_Click(object sender, EventArgs e, object txtNumSiniestro)
+        {
+            var met = new AmpliacionMetodosNegocio();
+            var dt = met.ConsultarAmpliacionReporte();
+           
+            var reportPath = "GestionSiniestros.Reportes.AmpliacionReporte.rdlc";
+            ReportDataSource sReportDataSource = new ReportDataSource();
+
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = reportPath;
+            sReportDataSource.Name = "ReporteAmpliacion";
+            sReportDataSource.Value = dt; //.Tables[0];
+            reportViewer1.LocalReport.DataSources.Add(sReportDataSource);
+            reportViewer1.RefreshReport();
+        }
+
         private void Ampliacion_Click(object sender, EventArgs e)
         {
             var met = new AmpliacionMetodosNegocio();
@@ -40,7 +56,24 @@ namespace GestionSiniestros.Pantallas
             reportViewer1.LocalReport.DataSources.Add(sReportDataSource);
             reportViewer1.RefreshReport();
         }
+
+        //public void Ampliacion_Click(object sender, EventArgs e, int Num_siniestro)
+
+        //{
+
+
+        //    var met = new AmpliacionMetodosNegocio();
+        //    var dt = met.ConsultarAmpliacionReporte(Num_siniestro);
+
+        //    var reportPath = "GestionSiniestros.Reportes.AmpliacionReporte.rdlc";
+        //    ReportDataSource sReportDataSource = new ReportDataSource();
+
+        //    this.reportViewer1.LocalReport.ReportEmbeddedResource = reportPath;
+        //    sReportDataSource.Name = "ReporteAmpliacion";
+        //    sReportDataSource.Value = dt; //.Tables[0];
+        //    reportViewer1.LocalReport.DataSources.Add(sReportDataSource);
+        //    reportViewer1.RefreshReport();
+    }
     }
 
 
-}

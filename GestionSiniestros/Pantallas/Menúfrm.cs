@@ -64,5 +64,19 @@ namespace GestionSiniestros.Pantallas
             form.Show();
 
         }
+
+        private void denunciasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DenunciaViewerMetrica form = new DenunciaViewerMetrica();
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.Show();
+        }
+
+        private void ampliacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //AmpliacionViewer form = new AmpliacionViewer();
+            //form.StartPosition = FormStartPosition.CenterScreen;
+            //form.Show();
+        }
     }
 }

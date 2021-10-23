@@ -8,7 +8,9 @@ namespace CapaEntidad
 {
     public class AmpliacionEntidad
     {
-        public int Num_siniestro { get; set; }
+
+        public int id { get; set; }
+        public int Num_Siniestro { get; set; }
         public String AmpliacionSin { get; set; }
         public DateTime Fecha { get; set; }
     }

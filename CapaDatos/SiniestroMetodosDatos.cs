@@ -24,14 +24,14 @@ namespace CapaDatos
                 //INSERT INTO Siniestro(Hora,Fecha,Declaracion,Lugar,id_poliza,id_estado)
                 // VALUES(TRY_CONVERT(TIME, '12:05:06'), GETDATE(), 'Declaraion de prueba', 'Calle Rumipal barrio los naranjos', 4, 1)
 
-                cmd.Parameters.AddWithValue("@param1", siniestro.hora);
-                cmd.Parameters.AddWithValue("@param2", siniestro.fecha);
-                cmd.Parameters.AddWithValue("@param3", siniestro.declaracion);
-                cmd.Parameters.AddWithValue("@param4", siniestro.lugar);
-                cmd.Parameters.AddWithValue("@param5", siniestro.idPoliza);
-                cmd.Parameters.AddWithValue("@param6", siniestro.idEstado);
-                cmd.Parameters.AddWithValue("@param7", siniestro.tipoSiniestro);
-                cmd.Parameters.AddWithValue("@param8", siniestro.DetalleDanios);
+                cmd.Parameters.AddWithValue("@param1", siniestro.Hora);
+                cmd.Parameters.AddWithValue("@param2", siniestro.Fecha);
+                cmd.Parameters.AddWithValue("@param3", siniestro.Declaracion);
+                cmd.Parameters.AddWithValue("@param4", siniestro.Lugar);
+                cmd.Parameters.AddWithValue("@param5", siniestro.id_poliza);
+                cmd.Parameters.AddWithValue("@param6", siniestro.id_estado);
+                cmd.Parameters.AddWithValue("@param7", siniestro.tipo_siniestro);
+                cmd.Parameters.AddWithValue("@param8", siniestro.detalle_danios);
 
                 try
                 {
@@ -72,6 +72,16 @@ namespace CapaDatos
            
 
 
+        }
+
+        public void updateEstado(int numSiniestro, int estado, int idturno)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void updateFinalizarSiniestro(int numSiniestro)
+        {
+            throw new NotImplementedException();
         }
 
         public DataTable InsertarSiniestro()
@@ -161,59 +171,61 @@ namespace CapaDatos
 
         #endregion
 
-        #region update
 
-        public void updateEstado(int numSiniestro, int estado, int idturno)
+       public DataTable ConsultarReporteDenuncia()
+         {
 
-        {
-            using (SqlCommand cmd = new SqlCommand())
-
+            //var ds = new DataSet();
+            var dt = new DataTable();
+            try
             {
+                string sqlStr = "SELECT Hora,Fecha,Declaracion,Lugar,id_poliza,id_estado,tipo_siniestro,detalle_danios  FROM Siniestro   ";
+        //var c = AbrirConexion();
+        var ds = new DataSet();
+        var da = new SqlDataAdapter(sqlStr, conectar());
+        ds = new DataSet();
+        da.Fill(ds);
+                dt = ds.Tables[0];
 
-                cmd.Connection = conectar();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = @"update Siniestro set id_estado = @param1 , id_turno = @param2  where Num_siniestro = @param3";
-
-                cmd.Parameters.AddWithValue("@param1", estado);
-                cmd.Parameters.AddWithValue("@param2", idturno);
-                cmd.Parameters.AddWithValue("@param3", numSiniestro);
-
-                try
-                {
-                    cmd.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                return dt;
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK);
+                return dt;
+            }
+
+
+
+
+            //public DataTable ConsultarDenuncia()
+            //{
+
+            //    //var ds = new DataSet();
+            //    var dt = new DataTable();
+            //    try
+            //    {
+            //        string sqlStr = "SELECT Hora,Fecha,Declaracion,Lugar,id_poliza,id_estado,tipo_siniestro,detalle_danios  FROM Siniestro   ";
+            //        //var c = AbrirConexion();
+            //        var ds = new DataSet();
+            //        var da = new SqlDataAdapter(sqlStr, conectar());
+            //        ds = new DataSet();
+            //        da.Fill(ds);
+            //        dt = ds.Tables[0];
+
+            //        return dt;
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK);
+            //        return dt;
+            //    }
+
+                //agregando metodo para traer datos de la denunca consultada reporte
         }
 
-        public void updateFinalizarSiniestro(int numSiniestro)
 
-        {
-            using (SqlCommand cmd = new SqlCommand())
-
-            {
-
-                cmd.Connection = conectar();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = @"update Siniestro set id_estado = 3 where Num_siniestro = @param1";
-
-                cmd.Parameters.AddWithValue("@param1", numSiniestro);
-                                
-
-                try
-                {
-                    cmd.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-        }
-
-        #endregion
     }
-}
+
+    }
+

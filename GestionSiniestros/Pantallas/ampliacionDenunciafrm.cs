@@ -46,7 +46,7 @@ namespace GestionSiniestros.Pantallas
 
                 //AmpliacionMetodos  Adampliacion = new AmpliacionMetodos();
                 //Ampliacion  oampliacion = new Ampliacion ();
-                oampliacion.Num_siniestro = int.Parse(txtNumSiniestro.Text);
+                oampliacion.Num_Siniestro = int.Parse(txtNumSiniestro.Text);
                 oampliacion.AmpliacionSin = tbAmp.Text;
                 oampliacion.Fecha = DateTime.Parse(fechaAmp.Value.ToShortDateString());
 
@@ -115,8 +115,12 @@ namespace GestionSiniestros.Pantallas
 
         private void button2_Click(object sender, EventArgs e)
         {
+            
             AmpliacionViewer rep = new AmpliacionViewer();
             rep.ShowDialog();
+
+
+            // boton imprimit
         }
 
         private void dgvHistorial_CellContentClick(object sender, DataGridViewCellEventArgs e)

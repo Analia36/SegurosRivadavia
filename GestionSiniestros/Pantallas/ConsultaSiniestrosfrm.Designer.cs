@@ -41,6 +41,10 @@
             this.btnBaja = new System.Windows.Forms.Button();
             this.btnResolucion = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnFiltroSin = new System.Windows.Forms.Button();
+            this.txtSini = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSiniestro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultarTurno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -63,7 +67,7 @@
             this.tbDni.Location = new System.Drawing.Point(176, 43);
             this.tbDni.Margin = new System.Windows.Forms.Padding(4);
             this.tbDni.Name = "tbDni";
-            this.tbDni.Size = new System.Drawing.Size(132, 23);
+            this.tbDni.Size = new System.Drawing.Size(132, 22);
             this.tbDni.TabIndex = 1;
             this.tbDni.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -223,13 +227,72 @@
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.button1.FlatAppearance.BorderSize = 2;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.DimGray;
+            this.button1.Location = new System.Drawing.Point(812, 398);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(137, 32);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Imprimir";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnFiltroSin
+            // 
+            this.btnFiltroSin.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnFiltroSin.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.btnFiltroSin.FlatAppearance.BorderSize = 2;
+            this.btnFiltroSin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltroSin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFiltroSin.ForeColor = System.Drawing.Color.DimGray;
+            this.btnFiltroSin.Location = new System.Drawing.Point(329, 85);
+            this.btnFiltroSin.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFiltroSin.Name = "btnFiltroSin";
+            this.btnFiltroSin.Size = new System.Drawing.Size(100, 32);
+            this.btnFiltroSin.TabIndex = 15;
+            this.btnFiltroSin.Text = "Buscar";
+            this.btnFiltroSin.UseVisualStyleBackColor = false;
+            this.btnFiltroSin.Click += new System.EventHandler(this.btnFiltroSin_Click);
+            // 
+            // txtSini
+            // 
+            this.txtSini.Location = new System.Drawing.Point(176, 93);
+            this.txtSini.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSini.Name = "txtSini";
+            this.txtSini.Size = new System.Drawing.Size(132, 22);
+            this.txtSini.TabIndex = 14;
+            this.txtSini.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Window;
+            this.label1.Location = new System.Drawing.Point(87, 96);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 17);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Siniestro";
+            // 
             // ConsultaSiniestrosfrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1191, 703);
+            this.Controls.Add(this.btnFiltroSin);
+            this.Controls.Add(this.txtSini);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnResolucion);
             this.Controls.Add(this.btnBaja);
@@ -242,7 +305,7 @@
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.tbDni);
             this.Controls.Add(this.lbDni);
-            this.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Maroon;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -272,5 +335,9 @@
         private System.Windows.Forms.Button btnBaja;
         private System.Windows.Forms.Button btnResolucion;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnFiltroSin;
+        private System.Windows.Forms.TextBox txtSini;
+        private System.Windows.Forms.Label label1;
     }
 }

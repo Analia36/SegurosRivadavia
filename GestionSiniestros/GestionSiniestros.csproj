@@ -85,6 +85,18 @@
     <Compile Include="Pantallas\ConsultarSiniestroInforme.Designer.cs">
       <DependentUpon>ConsultarSiniestroInforme.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pantallas\DenunciaAdminViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\DenunciaAdminViewer.Designer.cs">
+      <DependentUpon>DenunciaAdminViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pantallas\DenunciaViewerMetrica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\DenunciaViewerMetrica.Designer.cs">
+      <DependentUpon>DenunciaViewerMetrica.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pantallas\InformePericiaFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +145,12 @@
     <Compile Include="Pantallas\Registrofrm.Designer.cs">
       <DependentUpon>Registrofrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pantallas\ReporteEstados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\ReporteEstados.Designer.cs">
+      <DependentUpon>ReporteEstados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pantallas\resolucionFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +168,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\ConsultarSiniestroInforme.resx">
       <DependentUpon>ConsultarSiniestroInforme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\DenunciaAdminViewer.resx">
+      <DependentUpon>DenunciaAdminViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\DenunciaViewerMetrica.resx">
+      <DependentUpon>DenunciaViewerMetrica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\InformePericiaFrm.resx">
       <DependentUpon>InformePericiaFrm.cs</DependentUpon>
@@ -176,6 +200,9 @@
     <EmbeddedResource Include="Pantallas\Registrofrm.resx">
       <DependentUpon>Registrofrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\ReporteEstados.resx">
+      <DependentUpon>ReporteEstados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\resolucionFrm.resx">
       <DependentUpon>resolucionFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -190,10 +217,16 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Reportes\AmpliacionReporte.rdlc" />
+    <EmbeddedResource Include="Reportes\DenunciaAdmReporte.rdlc" />
+    <EmbeddedResource Include="Reportes\DenunciaMetrica.rdlc" />
+    <EmbeddedResource Include="Reportes\EstadosRdlc.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteAmpNum.rdlc" />
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\CapaEntidad.AmpliacionEntidad.datasource" />
+    <None Include="Properties\DataSources\CapaEntidad.AsociadosEntidad.datasource" />
+    <None Include="Properties\DataSources\CapaEntidad.SiniestroEntidad.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

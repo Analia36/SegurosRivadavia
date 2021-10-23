@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using CapaNegocio;
+using CapaEntidad; 
 
 namespace GestionSiniestros.Pantallas
 {
@@ -8,9 +9,13 @@ namespace GestionSiniestros.Pantallas
     {
         SiniestroMetodosNegocio siniestros = new SiniestroMetodosNegocio();
         TurnoMetodosNegocio adturno = new TurnoMetodosNegocio();
+        DenunciaAdmMetodosNegocio Num_Siniestro = new DenunciaAdmMetodosNegocio();
+
+
         public ConsultaSiniestrosfrm()
         {
             InitializeComponent();
+   
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
@@ -189,5 +194,31 @@ namespace GestionSiniestros.Pantallas
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DenunciaAdminViewer rep = new DenunciaAdminViewer();
+            rep.ShowDialog();
+        }
+
+        private void btnFiltroSin_Click(object sender, EventArgs e)
+        {
+            int valor;
+            bool esNumero = int.TryParse(txtSini.Text, out valor);
+
+            if (txtSini.Text == "")
+            {
+                MessageBox.Show("Debe ingresar numero de siniestro para poder realizar la consulta.");
+                return;
+            }
+
+            if (!esNumero)
+            {
+                MessageBox.Show("El valor ingresado debe ser un número.");
+                return;
+            }
+
+            dgvSiniestro.DataSource = Num_Siniestro.ConsultarSiniestrosPorNumero(Int32.Parse(txtSini.Text));
+            dgvSiniestro.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
     }
 }

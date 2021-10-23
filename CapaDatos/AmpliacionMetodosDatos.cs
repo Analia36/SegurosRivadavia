@@ -3,7 +3,10 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
 using CapaEntidad;
+
+
 namespace CapaDatos
+ 
 {
     public class AmpliacionMetodosDatos : Conexion 
     {
@@ -25,12 +28,14 @@ namespace CapaDatos
                 cmd.Connection = conectar();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = @"INSERT INTO Ampliacion(Num_siniestro, AmpliacionSin, Fecha)
-                            VALUES(@param1,@param2,@param3)";
+                            VALUES(@param1,@param2,@param3,@param4)";
 
+                cmd.Parameters.AddWithValue("@param1", ampliacion.id);
+                cmd.Parameters.AddWithValue("@param2", ampliacion.Num_Siniestro);
+                cmd.Parameters.AddWithValue("@param3", ampliacion.AmpliacionSin);
+                cmd.Parameters.AddWithValue("@param4", ampliacion.Fecha);
+                
 
-                cmd.Parameters.AddWithValue("@param1", ampliacion.Num_siniestro);
-                cmd.Parameters.AddWithValue("@param2", ampliacion.AmpliacionSin);
-                cmd.Parameters.AddWithValue("@param3", ampliacion.Fecha);
                 try
                 {
                     cmd.ExecuteNonQuery();
@@ -53,16 +58,18 @@ namespace CapaDatos
         #region consulta
 
 
-        public DataTable consultarhistorial(int Num_siniestro)
+        public DataTable consultarhistorial(int Num_Siniestro)
         {
             DataTable dt = new DataTable();
             var ds = new DataSet();
-            string sqlStr = " select a.Num_siniestro as 'Número de Siniestro', " +
+            string sqlStr = " select  a.id as 'Id'," +
+                      "a.Num_Siniestro as 'Número de Siniestro', " +
                      " a.fecha as Fecha," +
                      " a.AmpliacionSin as 'Ampliacion'" +
+                      
                     " from Ampliacion a " +
                     " where " +
-                    " a.Num_siniestro = " + Num_siniestro +
+                    " a.Num_Siniestro = " + Num_Siniestro +
                     " order by fecha desc ";
 
             try
@@ -87,12 +94,17 @@ namespace CapaDatos
 
         public DataTable ConsultarAmpliacionReporte()
         {
-
-            //var ds = new DataSet();
             var dt = new DataTable();
             try
             {
-                string sqlStr = "Select *,  Numero as Num_siniestro, Fecha as Fecha, Ampliacion as AmpliacionSin from Ampliacion";
+                string sqlStr = "create procedure Ampliacion_Siniestro @Num_Siniestro int," +
+                                 "as," +
+                                 "begin," +
+                                 "select Ampliacion.id, Ampliacion.Num_Siniestro, Ampliacion.AmpliacionSin, Ampliacion.Fecha, Siniestro.Num_siniestro," +
+                                 "from Ampliacion," +
+                                 "inner join Siniestro on Siniestro.Num_siniestro = Ampliacion.Num_Siniestro where Ampliacion.Num_Siniestro = @Param2";
+
+
                 //var c = AbrirConexion();
                 var ds = new DataSet();
                 var da = new SqlDataAdapter(sqlStr, conectar());
@@ -107,11 +119,17 @@ namespace CapaDatos
                 //  MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK);
                 return dt;
             }
-        }
 
 
+
+          
     }
 }
 
+}
 
-    
+
+
+
+
+

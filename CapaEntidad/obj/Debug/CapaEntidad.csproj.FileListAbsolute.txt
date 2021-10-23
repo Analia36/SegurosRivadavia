@@ -13,7 +13,6 @@ C:\Users\alina\Desktop\Git\SegurosRivadavia\CapaEntidad\bin\Debug\CapaEntidad.pd
 C:\Users\alina\Desktop\Git\SegurosRivadavia\CapaEntidad\bin\Debug\Microsoft.SqlServer.Types.dll
 C:\Users\alina\Desktop\Git\SegurosRivadavia\CapaEntidad\obj\Debug\CapaEntidad.csproj.AssemblyReference.cache
 C:\Users\alina\Desktop\Git\SegurosRivadavia\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
-C:\Users\alina\Desktop\Git\SegurosRivadavia\CapaEntidad\obj\Debug\CapaEntidad.csproj.CopyComplete
 C:\Users\alina\Desktop\Git\SegurosRivadavia\CapaEntidad\obj\Debug\CapaEntidad.dll
 C:\Users\alina\Desktop\Git\SegurosRivadavia\CapaEntidad\obj\Debug\CapaEntidad.pdb
 C:\Users\alina\Desktop\Git\SegurosRivadavia\CapaEntidad\bin\Debug\Microsoft.ReportViewer.Common.dll
