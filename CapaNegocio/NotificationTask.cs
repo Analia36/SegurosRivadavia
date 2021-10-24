@@ -2,8 +2,10 @@
 using System.Data;
 using System.Drawing;
 using System.Timers;
+using System.Windows.Forms;
 using CapaDatos;
 using Tulpep.NotificationWindow;
+
 
 namespace CapaNegocio
 {
@@ -63,14 +65,14 @@ namespace CapaNegocio
         private void notify(String title,String description)
         {                        
          
-            notifier.Image = Properties.Resources.Info;
+           // notifier.Image = Properties.Resources.Info;
             notifier.TitleText = title;
             notifier.ContentText = description;
             notifier.ContentFont = new System.Drawing.Font("Tahoma", 8F);
             notifier.Size = new Size(500, 200);            
             notifier.ShowGrip = true;
             notifier.HeaderHeight = 20;
-            notifier.TitlePadding = new System.Windows.Forms.Padding(3);            
+            notifier.TitlePadding = new Padding(3);            
             notifier.ContentPadding = new System.Windows.Forms.Padding(3);
             notifier.ImagePadding = new System.Windows.Forms.Padding(8);
             notifier.AnimationDuration = 1000;
