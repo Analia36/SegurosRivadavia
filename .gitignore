@@ -1,0 +1,7 @@
+#Ignoro carpeta bin y obj 
+**/bin/
+**/obj/
+
+.vs/
+
+CapaDatos/Conexion.cs

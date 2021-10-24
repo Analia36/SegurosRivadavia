@@ -18,10 +18,10 @@ namespace CapaNegocio
         {
             return ObjAMD.consultarhistorial(Num_Siniestro);
         }
-        public DataTable ConsultarAmpliacionReporte()
+        public DataTable ConsultarAmpliacionReporte(int numSiniestro)
         {
-                return ObjAMD.ConsultarAmpliacionReporte();
-            }
+                return ObjAMD.ConsultarAmpliacionReporte(numSiniestro);
+        }
 
 
 

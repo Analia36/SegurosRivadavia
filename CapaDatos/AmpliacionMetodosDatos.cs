@@ -92,17 +92,17 @@ namespace CapaDatos
 
         #endregion
 
-        public DataTable ConsultarAmpliacionReporte()
+        public DataTable ConsultarAmpliacionReporte(int numSiniestro)
         {
             var dt = new DataTable();
             try
             {
-                string sqlStr = "create procedure Ampliacion_Siniestro @Num_Siniestro int," +
-                                 "as," +
-                                 "begin," +
-                                 "select Ampliacion.id, Ampliacion.Num_Siniestro, Ampliacion.AmpliacionSin, Ampliacion.Fecha, Siniestro.Num_siniestro," +
-                                 "from Ampliacion," +
-                                 "inner join Siniestro on Siniestro.Num_siniestro = Ampliacion.Num_Siniestro where Ampliacion.Num_Siniestro = @Param2";
+                string sqlStr = " select a.Num_siniestro," +
+                                "       a.Fecha, " +
+                                "       a.AmpliacionSin " +
+                                " from Ampliacion a " +
+                                " inner join Siniestro s on s.Num_siniestro = a.Num_Siniestro " +
+                                " where S.Num_Siniestro = " + numSiniestro;
 
 
                 //var c = AbrirConexion();
@@ -118,13 +118,9 @@ namespace CapaDatos
             {
                 //  MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK);
                 return dt;
-            }
-
-
-
-          
+            }          
+        }
     }
-}
 
 }
 

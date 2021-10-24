@@ -196,7 +196,7 @@ namespace GestionSiniestros.Pantallas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DenunciaAdminViewer rep = new DenunciaAdminViewer();
+            DenunciaAdminViewer rep = new DenunciaAdminViewer(Int32.Parse(dgvSiniestro.SelectedCells[3].Value.ToString()));
             rep.ShowDialog();
         }
 

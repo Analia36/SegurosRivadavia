@@ -20,5 +20,6 @@ namespace CapaEntidad
         public String tipo_siniestro { get; set; }
         public String detalle_danios { get; set; }
         public ConductorEntidad conductor { get; set; }
+        public String estadoDescripcion { get; set; }
     }
 }

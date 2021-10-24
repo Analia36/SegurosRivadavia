@@ -116,7 +116,7 @@ namespace GestionSiniestros.Pantallas
         private void button2_Click(object sender, EventArgs e)
         {
             
-            AmpliacionViewer rep = new AmpliacionViewer();
+            AmpliacionViewer rep = new AmpliacionViewer(Int32.Parse(this.txtNumSiniestro.Text));
             rep.ShowDialog();
 
 

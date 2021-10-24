@@ -15,9 +15,11 @@ namespace GestionSiniestros.Pantallas
 {
     public partial class AmpliacionViewer : Form
     {
-        public AmpliacionViewer()
+        private int numSiniestro;
+        public AmpliacionViewer(int numSiniestro)
         {
             InitializeComponent();
+            this.numSiniestro = numSiniestro;
         }
 
         private void AmpliacionViewer_Load(object sender, EventArgs e)
@@ -30,7 +32,7 @@ namespace GestionSiniestros.Pantallas
         private void Ampliacion_Click(object sender, EventArgs e, object txtNumSiniestro)
         {
             var met = new AmpliacionMetodosNegocio();
-            var dt = met.ConsultarAmpliacionReporte();
+            var dt = met.ConsultarAmpliacionReporte(this.numSiniestro);
            
             var reportPath = "GestionSiniestros.Reportes.AmpliacionReporte.rdlc";
             ReportDataSource sReportDataSource = new ReportDataSource();
@@ -45,7 +47,7 @@ namespace GestionSiniestros.Pantallas
         private void Ampliacion_Click(object sender, EventArgs e)
         {
             var met = new AmpliacionMetodosNegocio();
-            var dt = met.ConsultarAmpliacionReporte();
+            var dt = met.ConsultarAmpliacionReporte(this.numSiniestro);
 
             var reportPath = "GestionSiniestros.Reportes.AmpliacionReporte.rdlc";
             ReportDataSource sReportDataSource = new ReportDataSource();

@@ -71,14 +71,17 @@ namespace CapaDatos
             return dt;
         }
 
-        public DataTable ConsultarDenuncia()
+        public DataTable ConsultarDenuncia(int numSiniestro)
         {
 
             //var ds = new DataSet();
             var dt = new DataTable();
             try
             {
-                string sqlStr = "SELECT Hora,Fecha,Declaracion,Lugar,id_poliza,id_estado,tipo_siniestro,detalle_danios  FROM Siniestro count    ";
+                string sqlStr = "SELECT s.*,e.Tipo as estadoDescripcion " +
+                                " FROM Siniestro s " +
+                                " inner join Estado e on(s.id_estado = e.id) " +
+                                " where Num_siniestro = " + numSiniestro;
      
                 //var c = AbrirConexion();
                 var ds = new DataSet();
@@ -86,6 +89,7 @@ namespace CapaDatos
                 ds = new DataSet();
                 da.Fill(ds);
                 dt = ds.Tables[0];
+                
 
                 return dt;
             }
@@ -93,12 +97,9 @@ namespace CapaDatos
             {
                 //  MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK);
                 return dt;
-            }
-             {
+            }  
+          }
 
-  
-        }
-}
         }
 
     }

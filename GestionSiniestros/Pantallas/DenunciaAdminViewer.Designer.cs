@@ -35,17 +35,17 @@ namespace GestionSiniestros.Pantallas
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Location = new System.Drawing.Point(36, 84);
+            this.reportViewer1.Location = new System.Drawing.Point(12, 84);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(396, 246);
+            this.reportViewer1.Size = new System.Drawing.Size(817, 200);
             this.reportViewer1.TabIndex = 0;
             // 
             // btnDenAdm
             // 
-            this.btnDenAdm.Location = new System.Drawing.Point(70, 27);
+            this.btnDenAdm.Location = new System.Drawing.Point(12, 28);
             this.btnDenAdm.Name = "btnDenAdm";
-            this.btnDenAdm.Size = new System.Drawing.Size(75, 23);
+            this.btnDenAdm.Size = new System.Drawing.Size(91, 27);
             this.btnDenAdm.TabIndex = 1;
             this.btnDenAdm.Text = "Denuncia";
             this.btnDenAdm.UseVisualStyleBackColor = true;
@@ -55,7 +55,7 @@ namespace GestionSiniestros.Pantallas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(841, 391);
             this.Controls.Add(this.btnDenAdm);
             this.Controls.Add(this.reportViewer1);
             this.Name = "DenunciaAdminViewer";
