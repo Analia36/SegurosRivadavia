@@ -179,12 +179,12 @@ namespace CapaDatos
             var dt = new DataTable();
             try
             {
-                string sqlStr = "SELECT Hora,Fecha,Declaracion,Lugar,id_poliza,id_estado,tipo_siniestro,detalle_danios  FROM Siniestro   ";
-        //var c = AbrirConexion();
-        var ds = new DataSet();
-        var da = new SqlDataAdapter(sqlStr, conectar());
-        ds = new DataSet();
-        da.Fill(ds);
+                string sqlStr = "SELECT Hora,Fecha,Declaracion,Lugar,id_poliza,id_estado,tipo_siniestro,detalle_danios  FROM Siniestro  ";
+                    //var c = AbrirConexion();
+                var ds = new DataSet();
+                var da = new SqlDataAdapter(sqlStr, conectar());
+                ds = new DataSet();
+                da.Fill(ds);
                 dt = ds.Tables[0];
 
                 return dt;
