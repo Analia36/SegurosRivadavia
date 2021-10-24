@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Data;
 using System.Drawing;
-using System.Timers;
 using System.Windows.Forms;
 using CapaDatos;
 using Tulpep.NotificationWindow;
+
 
 
 namespace CapaNegocio
@@ -63,9 +63,9 @@ namespace CapaNegocio
 
 
         private void notify(String title,String description)
-        {                        
-         
-           // notifier.Image = Properties.Resources.Info;
+        {
+
+            notifier.Image = Properties.Resources.IconInformation;
             notifier.TitleText = title;
             notifier.ContentText = description;
             notifier.ContentFont = new System.Drawing.Font("Tahoma", 8F);

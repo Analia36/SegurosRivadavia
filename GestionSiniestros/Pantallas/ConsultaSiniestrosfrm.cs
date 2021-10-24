@@ -10,12 +10,13 @@ namespace GestionSiniestros.Pantallas
         SiniestroMetodosNegocio siniestros = new SiniestroMetodosNegocio();
         TurnoMetodosNegocio adturno = new TurnoMetodosNegocio();
         DenunciaAdmMetodosNegocio Num_Siniestro = new DenunciaAdmMetodosNegocio();
+        NotificationTask notification = new NotificationTask();
 
 
         public ConsultaSiniestrosfrm()
         {
-            InitializeComponent();
-   
+            InitializeComponent();            
+
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
@@ -48,6 +49,8 @@ namespace GestionSiniestros.Pantallas
         private void btnIngresarTurno_Click(object sender, EventArgs e)
         {
             String numeroSiniestro = dgvSiniestro.SelectedCells[3].Value.ToString();
+            notification.invokeExecutionNotificationWithoutSolve();
+
             ingresoTurnoFrm frmTurno = new ingresoTurnoFrm(numeroSiniestro);
             //this.Hide();
 
