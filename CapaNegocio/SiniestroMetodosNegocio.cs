@@ -20,12 +20,21 @@ namespace CapaNegocio
             return objSMD.ConsultarSiniestrosPorAsociado(dni);
         }
 
+        //consulstamos stros por asoc
         public DataTable ConsultarReporteDenuncia()
         {
             return objSMD.ConsultarReporteDenuncia();
         }
 
-        public void updateFinalizarSiniestro(int v)
+        //vmeos todas las denuncias
+        //public DataTable ConsultarGraficoDen()
+        //          {
+
+        //    return objSMD.ConsultarGraficoDen();
+        //          }
+
+        // relacionamos fecha tipo stro y lugar
+    public void updateFinalizarSiniestro(int v)
         {
             throw new NotImplementedException();
         }
@@ -47,15 +56,18 @@ namespace CapaNegocio
 
 
 
-       // public void ConsultarDenuncia();
-       // {
 
-       // return objSMD.ConsultarDenuncia()
-       //}
-    //agregando metodo para traer datos de la denunca consultada reporte
+
+
 }
 
 }
+
+         
+
+
+
+
 
 
 

@@ -179,7 +179,7 @@ namespace CapaDatos
             var dt = new DataTable();
             try
             {
-                string sqlStr = "SELECT Hora,Fecha,Declaracion,Lugar,id_poliza,id_estado,tipo_siniestro,detalle_danios  FROM Siniestro  ";
+                string sqlStr = "SELECT Num_siniestro, Hora,Fecha,Declaracion,Lugar,id_poliza,id_estado,tipo_siniestro,detalle_danios from Siniestro";
                     //var c = AbrirConexion();
                 var ds = new DataSet();
                 var da = new SqlDataAdapter(sqlStr, conectar());
@@ -198,34 +198,21 @@ namespace CapaDatos
 
 
 
-            //public DataTable ConsultarDenuncia()
-            //{
-
-            //    //var ds = new DataSet();
-            //    var dt = new DataTable();
-            //    try
-            //    {
-            //        string sqlStr = "SELECT Hora,Fecha,Declaracion,Lugar,id_poliza,id_estado,tipo_siniestro,detalle_danios  FROM Siniestro   ";
-            //        //var c = AbrirConexion();
-            //        var ds = new DataSet();
-            //        var da = new SqlDataAdapter(sqlStr, conectar());
-            //        ds = new DataSet();
-            //        da.Fill(ds);
-            //        dt = ds.Tables[0];
-
-            //        return dt;
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK);
-            //        return dt;
-            //    }
-
-                //agregando metodo para traer datos de la denunca consultada reporte
         }
 
+        //public DataTable ConsultarGraficoDen()
+        //{
+        //    string sqlStr = "SELECT Fecha, tipo_siniestro, Lugar from Siniestro";
+
+        //    var da = new SqlDataAdapter(sqlStr, conectar());
+        //    var ds = new DataSet();
+        //    da.Fill(ds);
+        //    DataTable dt = ds.Tables[0];
+
+        //    return dt;
+        }
 
     }
 
-    }
+
 

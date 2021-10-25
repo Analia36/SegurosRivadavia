@@ -116,7 +116,7 @@ namespace CapaDatos
             }
             catch (Exception ex)
             {
-                //  MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK);
                 return dt;
             }          
         }

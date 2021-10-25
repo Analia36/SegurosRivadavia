@@ -26,7 +26,23 @@ namespace GestionSiniestros.Pantallas
             this.reportViewer1.RefreshReport();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var met = new GraficoDenunciasNegocio();
+            var dt = met.ConsultarGraficoDen();
+
+            var reportPath = "GestionSiniestros.Reportes.ReporteDenuncias.rdlc";
+            ReportDataSource sReportDataSource = new ReportDataSource();
+
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = reportPath;
+            sReportDataSource.Name = "GraficoDen";
+            sReportDataSource.Value = dt; //.Tables[0];
+            reportViewer1.LocalReport.DataSources.Add(sReportDataSource);
+            reportViewer1.RefreshReport();
+            // en grafico relacionamos fecha 
+        }
+
+        private void btnreporte_Click(object sender, EventArgs e)
         {
             var met = new SiniestroMetodosNegocio();
             var dt = met.ConsultarReporteDenuncia();
@@ -39,6 +55,7 @@ namespace GestionSiniestros.Pantallas
             sReportDataSource.Value = dt; //.Tables[0];
             reportViewer1.LocalReport.DataSources.Add(sReportDataSource);
             reportViewer1.RefreshReport();
+            // en grafico relacionamos fecha 
         }
     }
 }

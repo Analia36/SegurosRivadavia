@@ -10,15 +10,13 @@ namespace CapaNegocio
 
         DenunciaMetodosDatos obdDen = new DenunciaMetodosDatos();
 
+
         public DataTable ConsultarDenuncia(int numSiniestro)
         {
             return obdDen.ConsultarDenuncia(numSiniestro);
     }
 
-        public DataTable ConsultarSiniestrosPorNumero(int Num_Siniestro)
-        {
-            return obdDen.ConsultarSiniestrosPorNumero(Num_Siniestro);
-    }
+   
 }
 
 }
