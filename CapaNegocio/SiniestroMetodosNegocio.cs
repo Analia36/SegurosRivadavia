@@ -26,15 +26,8 @@ namespace CapaNegocio
             return objSMD.ConsultarReporteDenuncia();
         }
 
-        //vmeos todas las denuncias
-        //public DataTable ConsultarGraficoDen()
-        //          {
 
-        //    return objSMD.ConsultarGraficoDen();
-        //          }
-
-        // relacionamos fecha tipo stro y lugar
-    public void updateFinalizarSiniestro(int v)
+        public void updateFinalizarSiniestro(int v)
         {
             throw new NotImplementedException();
         }

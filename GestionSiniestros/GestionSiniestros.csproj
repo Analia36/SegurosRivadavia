@@ -107,6 +107,12 @@
     <Compile Include="Pantallas\DenunciaViewerMetrica.Designer.cs">
       <DependentUpon>DenunciaViewerMetrica.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pantallas\GraficoEstadoViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\GraficoEstadoViewer.Designer.cs">
+      <DependentUpon>GraficoEstadoViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pantallas\InformePericiaFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +191,9 @@
     <EmbeddedResource Include="Pantallas\DenunciaViewerMetrica.resx">
       <DependentUpon>DenunciaViewerMetrica.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\GraficoEstadoViewer.resx">
+      <DependentUpon>GraficoEstadoViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\InformePericiaFrm.resx">
       <DependentUpon>InformePericiaFrm.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -230,12 +239,15 @@
     <EmbeddedResource Include="Reportes\DenunciaAdmReporte.rdlc" />
     <EmbeddedResource Include="Reportes\DenunciaMetrica.rdlc" />
     <EmbeddedResource Include="Reportes\EstadosRdlc.rdlc" />
+    <EmbeddedResource Include="Reportes\GraficoEstados.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteDenuncias.rdlc" />
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\CapaEntidad.AmpliacionEntidad.datasource" />
     <None Include="Properties\DataSources\CapaEntidad.AsociadosEntidad.datasource" />
+    <None Include="Properties\DataSources\CapaEntidad.EstadoEntidad.datasource" />
+    <None Include="Properties\DataSources\CapaEntidad.GraficoEstadosEntidad.GraficoEstadosEntidad.datasource" />
     <None Include="Properties\DataSources\CapaEntidad.SiniestroEntidad.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

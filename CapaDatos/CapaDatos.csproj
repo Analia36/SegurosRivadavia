@@ -78,6 +78,7 @@
     <Compile Include="DataAccessNotification.cs" />
     <Compile Include="DenunciaMetodosDatos.cs" />
     <Compile Include="GraficoDenunciaDatos.cs" />
+    <Compile Include="GraficoEstados.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SiniestroMetodosDatos.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />

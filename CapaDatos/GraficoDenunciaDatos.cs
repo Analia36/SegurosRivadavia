@@ -10,6 +10,8 @@ namespace CapaDatos
     {
         public DataTable ConsultarGraficoDen()
     {
+
+
         string sqlStr = "SELECT Num_siniestro, tipo_siniestro from Siniestro";
 
         var da = new SqlDataAdapter(sqlStr, conectar());
@@ -21,6 +23,10 @@ namespace CapaDatos
 
 
     }
-}
+
+     
+        }
 
 }
+
+

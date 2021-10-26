@@ -172,15 +172,15 @@ namespace CapaDatos
         #endregion
 
 
-       public DataTable ConsultarReporteDenuncia()
-         {
+        public DataTable ConsultarReporteDenuncia()
+        {
 
             //var ds = new DataSet();
             var dt = new DataTable();
             try
             {
                 string sqlStr = "SELECT Num_siniestro, Hora,Fecha,Declaracion,Lugar,id_poliza,id_estado,tipo_siniestro,detalle_danios from Siniestro";
-                    //var c = AbrirConexion();
+                //var c = AbrirConexion();
                 var ds = new DataSet();
                 var da = new SqlDataAdapter(sqlStr, conectar());
                 ds = new DataSet();
@@ -210,9 +210,9 @@ namespace CapaDatos
         //    DataTable dt = ds.Tables[0];
 
         //    return dt;
-        }
-
     }
+}
+
 
 
 

@@ -13,6 +13,7 @@ namespace CapaNegocio
         GraficoDenunciaDatos objGraDen = new GraficoDenunciaDatos();
 
 
+
         public DataTable ConsultarGraficoDen()
         {
             return objGraDen.ConsultarGraficoDen();

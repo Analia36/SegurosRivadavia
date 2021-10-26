@@ -76,6 +76,7 @@
     <Compile Include="AsociadosMetodosNegocio.cs" />
     <Compile Include="DenunciaAdmMetodosNegocio.cs" />
     <Compile Include="GraficoDenunciasNegocio.cs" />
+    <Compile Include="GraficoEstadosNegocio.cs" />
     <Compile Include="InformePericiaNegocio.cs" />
     <Compile Include="NotificationTask.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

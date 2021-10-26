@@ -77,6 +77,7 @@
     <Compile Include="ConductorEntidad.cs" />
     <Compile Include="DomicilioEntidad.cs" />
     <Compile Include="EstadoEntidad.cs" />
+    <Compile Include="GraficoEstadosEntidad.cs" />
     <Compile Include="InformePericiaEntidad.cs" />
     <Compile Include="PeritoEntidad.cs" />
     <Compile Include="PolizaEntidad.cs" />
@@ -90,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\EstadoEntidad.datasource" />
     <None Include="Properties\DataSources\SiniestroEntidad.datasource" />
   </ItemGroup>
   <ItemGroup>

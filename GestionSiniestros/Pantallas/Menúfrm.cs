@@ -74,9 +74,9 @@ namespace GestionSiniestros.Pantallas
 
         private void ampliacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //AmpliacionViewer form = new AmpliacionViewer();
-            //form.StartPosition = FormStartPosition.CenterScreen;
-            //form.Show();
+            GraficoEstadoViewer form = new GraficoEstadoViewer();
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.Show();
         }
     }
 }
