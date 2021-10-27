@@ -18,5 +18,10 @@ namespace CapaNegocio
         {
             return objGraDen.ConsultarGraficoDen();
         }
-}
+
+        //public DataTable ConsultarGraficoDen2()
+        //{
+        //    return objGraDen.ConsultarGraficoDen2();
+        //}
+    }
 }

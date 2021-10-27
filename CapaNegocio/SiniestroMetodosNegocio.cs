@@ -15,6 +15,24 @@ namespace CapaNegocio
             objSMD.InsertarSiniestro(siniestro);
         }
 
+
+        public DataTable llenarBoxClaseCarnet()
+        {
+            return objSMD.llenarBoxClaseCarnet();
+        }
+
+        public DataTable llenarBoxSubClaseCarnet(int idClase)
+        {
+
+            return objSMD.llenarBoxSubClaseCarnet(idClase);
+
+
+
+ }
+
+
+ 
+
         public DataTable ConsultarSiniestrosPorAsociado(int dni)
         {
             return objSMD.ConsultarSiniestrosPorAsociado(dni);
@@ -32,15 +50,15 @@ namespace CapaNegocio
             throw new NotImplementedException();
         }
 
-        public object llenarBoxSubClaseCarnet(int valor)
-        {
-            throw new NotImplementedException();
-        }
+        //public object llenarBoxSubClaseCarnet(int valor)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public object llenarBoxClaseCarnet()
-        {
-            throw new NotImplementedException();
-        }
+        //public object llenarBoxClaseCarnet()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         public void updateEstado(int v1, int v2, int idturno)
         {

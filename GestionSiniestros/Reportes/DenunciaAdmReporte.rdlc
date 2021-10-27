@@ -627,7 +627,7 @@
     <Height>2.00483in</Height>
     <Style />
   </Body>
-  <Width>9.40092in</Width>
+  <Width>8.05717in</Width>
   <Page>
     <PageHeader>
       <Height>2.54cm</Height>
@@ -682,8 +682,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox4</rd:DefaultName>
-          <Top>0.49362cm</Top>
-          <Left>14.27016cm</Left>
+          <Top>0.22903cm</Top>
+          <Left>10.4337cm</Left>
           <Height>0.52062cm</Height>
           <Width>8.46667cm</Width>
           <ZIndex>1</ZIndex>
@@ -724,8 +724,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>0.17639cm</Top>
-          <Left>5.24849cm</Left>
+          <Top>1.3141cm</Top>
+          <Left>5.2485cm</Left>
           <Height>0.62646cm</Height>
           <Width>10.12cm</Width>
           <Style>

@@ -2,42 +2,34 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="CapaEntidadGraficoEstadosEntidad">
+    <DataSource Name="CapaEntidad">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>04694bad-6d6f-4677-a898-000fa7beca23</rd:DataSourceID>
+      <rd:DataSourceID>71997844-ceae-4d0d-99b2-c7137784b8a1</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="ReporteDen2">
       <Query>
-        <DataSourceName>CapaEntidadGraficoEstadosEntidad</DataSourceName>
+        <DataSourceName>CapaEntidad</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="id">
-          <DataField>id</DataField>
+        <Field Name="CantidadSiniestro">
+          <DataField>CantidadSiniestro</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="id_estado">
-          <DataField>id_estado</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Num_siniestro">
-          <DataField>Num_siniestro</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="tipo">
-          <DataField>tipo</DataField>
+        <Field Name="Tipo">
+          <DataField>Tipo</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>CapaEntidad.GraficoEstadosEntidad</rd:DataSetName>
-        <rd:TableName>GraficoEstadosEntidad</rd:TableName>
-        <rd:ObjectDataSourceType>CapaEntidad.GraficoEstadosEntidad.GraficoEstadosEntidad, CapaEntidad, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:DataSetName>CapaEntidad</rd:DataSetName>
+        <rd:TableName>Grafico2prueba</rd:TableName>
+        <rd:ObjectDataSourceType>CapaEntidad.Grafico2prueba, CapaEntidad, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -51,15 +43,15 @@
                 <ChartMember>
                   <Group Name="Chart1_CategoryGroup">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!tipo.Value</GroupExpression>
+                      <GroupExpression>=Fields!Tipo.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!tipo.Value</Value>
+                      <Value>=Fields!Tipo.Value</Value>
                     </SortExpression>
                   </SortExpressions>
-                  <Label>=Fields!tipo.Value</Label>
+                  <Label>=Fields!Tipo.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
@@ -68,25 +60,25 @@
                 <ChartMember>
                   <Group Name="Chart1_SeriesGroup">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!tipo.Value</GroupExpression>
+                      <GroupExpression>=Fields!Tipo.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!tipo.Value</Value>
+                      <Value>=Fields!Tipo.Value</Value>
                     </SortExpression>
                   </SortExpressions>
-                  <Label>=Fields!tipo.Value</Label>
+                  <Label>=Fields!Tipo.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartSeriesHierarchy>
             <ChartData>
               <ChartSeriesCollection>
-                <ChartSeries Name="Num_siniestro">
+                <ChartSeries Name="CantidadSiniestro">
                   <ChartDataPoints>
                     <ChartDataPoint>
                       <ChartDataPointValues>
-                        <Y>=First(Fields!Num_siniestro.Value)</Y>
+                        <Y>=First(Fields!CantidadSiniestro.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
@@ -401,11 +393,11 @@
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </ChartNoDataMessage>
-            <DataSetName>DataSet1</DataSetName>
-            <Top>1.00224cm</Top>
-            <Left>3.96558cm</Left>
+            <DataSetName>ReporteDen2</DataSetName>
+            <Top>2.35162cm</Top>
+            <Left>5.31495cm</Left>
             <Height>5cm</Height>
-            <Width>7.76458cm</Width>
+            <Width>7.5cm</Width>
             <Style>
               <Border>
                 <Color>LightGrey</Color>
@@ -416,7 +408,7 @@
             </Style>
           </Chart>
         </ReportItems>
-        <Height>2.82142in</Height>
+        <Height>2.89434in</Height>
         <Style />
       </Body>
       <Width>6.5in</Width>
@@ -439,5 +431,5 @@
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>cd3e8e23-e4a3-4f5d-93d8-808306379c5c</rd:ReportID>
+  <rd:ReportID>b8cb050c-59cb-4501-93ff-0681c625130f</rd:ReportID>
 </Report>

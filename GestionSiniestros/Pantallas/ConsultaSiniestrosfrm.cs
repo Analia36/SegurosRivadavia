@@ -9,8 +9,9 @@ namespace GestionSiniestros.Pantallas
     {
         SiniestroMetodosNegocio siniestros = new SiniestroMetodosNegocio();
         TurnoMetodosNegocio adturno = new TurnoMetodosNegocio();
-
+        DenunciaAdmMetodosNegocio Num_Siniestro = new DenunciaAdmMetodosNegocio();
         NotificationTask notification = new NotificationTask();
+
 
 
         public ConsultaSiniestrosfrm()
@@ -203,6 +204,27 @@ namespace GestionSiniestros.Pantallas
             rep.ShowDialog();
         }
 
+        private void btnFiltroSin_Click(object sender, EventArgs e)
+        {
+            int valor;
+            bool esNumero = int.TryParse(txtSini.Text, out valor);
+
+            if (txtSini.Text == "")
+            {
+                MessageBox.Show("Debe ingresar numero de siniestro para poder realizar la consulta.");
+                return;
+            }
+
+            if (!esNumero)
+            {
+                MessageBox.Show("El valor ingresado debe ser un número.");
+                return;
+            }
+
+            dgvSiniestro.DataSource = Num_Siniestro.ConsultarSiniestrosPorNumero(Int32.Parse(txtSini.Text));
+            dgvSiniestro.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
+
         //private void btnFiltroSin_Click(object sender, EventArgs e)
         //{
         //    int valor;
@@ -222,6 +244,6 @@ namespace GestionSiniestros.Pantallas
 
         //    dgvSiniestro.DataSource = Num_Siniestro.ConsultarSiniestrosPorNumero(Int32.Parse(txtSini.Text));
         //    dgvSiniestro.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-        }
+    }
     }
 

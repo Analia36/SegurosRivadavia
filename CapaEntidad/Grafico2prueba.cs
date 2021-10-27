@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace CapaEntidad
 {
-  public   class GraficoEstadosEntidad
+public    class Grafico2prueba
     {
+
 
         public String Tipo { get; set; }
         public int CantidadSiniestro { get; set; }
-
     }
 }

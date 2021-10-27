@@ -200,16 +200,7 @@ namespace CapaDatos
 
         }
 
-        //public DataTable ConsultarGraficoDen()
-        //{
-        //    string sqlStr = "SELECT Fecha, tipo_siniestro, Lugar from Siniestro";
-
-        //    var da = new SqlDataAdapter(sqlStr, conectar());
-        //    var ds = new DataSet();
-        //    da.Fill(ds);
-        //    DataTable dt = ds.Tables[0];
-
-        //    return dt;
+     
     }
 }
 

@@ -3,7 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using CapaEntidad;
-using CapaEntidad.GraficoEstadosEntidad;
+
 
 namespace CapaDatos
 {
@@ -17,10 +17,12 @@ namespace CapaDatos
             var dt = new DataTable();
             try
             {
-                string sqlStr = "SELECT Siniestro.Num_siniestro, Estado.Tipo ," +
-                                "FROM Siniestro INNER JOIN Estado ON Siniestro.id_estado = Estado.id," +
-                                "ORDER BY Estado.Tipo ";
-                                
+                string sqlStr = "SELECT count(1) as CantidadSiniestro, Estado.Tipo " +
+                    
+                    "FROM Siniestro INNER JOIN Estado ON Siniestro.id_estado = Estado.id  " +
+                    " group BY Estado.Tipo ";
+
+
 
                 //var c = AbrirConexion();
                 var ds = new DataSet();
@@ -46,7 +48,10 @@ namespace CapaDatos
         {
 
 
-            string sqlStr = "SELECT Num_siniestro, id_estado from Siniestro ";
+            string sqlStr = "SELECT count(1) as CantidadSiniestro, Estado.Tipo " +
+
+                    "FROM Siniestro INNER JOIN Estado ON Siniestro.id_estado = Estado.id  " +
+                    " group BY Estado.Tipo ";
 
             var da = new SqlDataAdapter(sqlStr, conectar());
             var ds = new DataSet();

@@ -23,10 +23,24 @@ namespace CapaDatos
 
 
     }
+        //public DataTable ConsultarGraficoDen2()
+        //{
 
-     
+
+        //    string sqlStr = "SELECT Num_siniestro, id_informe_pericia from Siniestro ";
+
+        //    var da = new SqlDataAdapter(sqlStr, conectar());
+        //    var ds = new DataSet();
+        //    da.Fill(ds);
+        //    DataTable dt = ds.Tables[0];
+
+        //    return dt;
+
+
         }
 
-}
+    }
+
+
 
 

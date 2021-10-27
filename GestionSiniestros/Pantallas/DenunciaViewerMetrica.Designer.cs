@@ -39,16 +39,16 @@ namespace GestionSiniestros.Pantallas
             this.reportViewer1.Location = new System.Drawing.Point(30, 62);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(396, 246);
+            this.reportViewer1.Size = new System.Drawing.Size(786, 376);
             this.reportViewer1.TabIndex = 0;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(186, 23);
+            this.button2.Location = new System.Drawing.Point(247, 34);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(96, 22);
             this.button2.TabIndex = 2;
-            this.button2.Text = "Estadistica";
+            this.button2.Text = "Grafico";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -56,9 +56,9 @@ namespace GestionSiniestros.Pantallas
             // 
             this.btnreporte.Location = new System.Drawing.Point(49, 34);
             this.btnreporte.Name = "btnreporte";
-            this.btnreporte.Size = new System.Drawing.Size(96, 22);
+            this.btnreporte.Size = new System.Drawing.Size(159, 22);
             this.btnreporte.TabIndex = 3;
-            this.btnreporte.Text = "reporte";
+            this.btnreporte.Text = "Reporte siniestros Totales";
             this.btnreporte.UseVisualStyleBackColor = true;
             this.btnreporte.Click += new System.EventHandler(this.btnreporte_Click);
             // 
@@ -66,7 +66,7 @@ namespace GestionSiniestros.Pantallas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(455, 450);
+            this.ClientSize = new System.Drawing.Size(828, 450);
             this.Controls.Add(this.btnreporte);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.reportViewer1);

@@ -56,6 +56,22 @@ namespace GestionSiniestros.Pantallas
             reportViewer1.LocalReport.DataSources.Add(sReportDataSource);
             reportViewer1.RefreshReport();
             // en grafico relacionamos fecha 
+        
+
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    var met = new GraficoDenunciasNegocio();
+        //    var dt = met.ConsultarGraficoDen2();
+
+        //    var reportPath = "GestionSiniestros.Reportes.ReporteDenuncias2.rdlc";
+        //    ReportDataSource sReportDataSource = new ReportDataSource();
+
+        //    this.reportViewer1.LocalReport.ReportEmbeddedResource = reportPath;
+        //    sReportDataSource.Name = "ReporteDen2";
+        //    sReportDataSource.Value = dt; //.Tables[0];
+        //    reportViewer1.LocalReport.DataSources.Add(sReportDataSource);
+        //    reportViewer1.RefreshReport();
+        //    // en grafico relacionamos fecha 
         }
     }
 }

@@ -34,7 +34,7 @@ namespace CapaNegocio
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
 
-               description += "El sinietro número: " + dr["Num_siniestro"].ToString() + " Creado en la fecha: " + dr["Fecha"].ToString().Substring(0,10) + " no tiene hasta el momento " +
+               description += "El siniestro número: " + dr["Num_siniestro"].ToString() + " Creado en la fecha: " + dr["Fecha"].ToString().Substring(0,10) + " no tiene hasta el momento " +
                     " un turno asignado. " + System.Environment.NewLine;
              }
 

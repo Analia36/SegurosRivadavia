@@ -26,23 +26,6 @@ namespace CapaNegocio
 
 
 
-        //public object ConsultarAmpliacionReporte()
-        //{
-        //    throw new NotImplementedException();
-
-
-        //public object ConsultarAmpliacionReporte()
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-
-        //   public DataTable ConsultarAmpliacionReporteNum()
-
-        //        {
-
-        //        return objAMD.ConsultarAmpliacionReporteNum();
-        //}
     }
 
 

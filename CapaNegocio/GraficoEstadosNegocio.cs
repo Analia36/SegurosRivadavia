@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using CapaDatos;
 
 
+
 namespace CapaNegocio
 {
     public class GraficoEstadosNegocio
@@ -16,7 +17,7 @@ namespace CapaNegocio
         GraficoEstados objEs = new GraficoEstados();
 
         public DataTable ConsultarReprteEs()
-        {
+            {
             return objEs.ConsultarReprteEs();
         }
 

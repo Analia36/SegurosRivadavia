@@ -239,15 +239,15 @@
     <EmbeddedResource Include="Reportes\DenunciaAdmReporte.rdlc" />
     <EmbeddedResource Include="Reportes\DenunciaMetrica.rdlc" />
     <EmbeddedResource Include="Reportes\EstadosRdlc.rdlc" />
-    <EmbeddedResource Include="Reportes\GraficoEstados.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteDenuncias.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteEstados.rdlc" />
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\CapaEntidad.AmpliacionEntidad.datasource" />
     <None Include="Properties\DataSources\CapaEntidad.AsociadosEntidad.datasource" />
     <None Include="Properties\DataSources\CapaEntidad.EstadoEntidad.datasource" />
-    <None Include="Properties\DataSources\CapaEntidad.GraficoEstadosEntidad.GraficoEstadosEntidad.datasource" />
+    <None Include="Properties\DataSources\CapaEntidad.Grafico2prueba.datasource" />
     <None Include="Properties\DataSources\CapaEntidad.SiniestroEntidad.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
